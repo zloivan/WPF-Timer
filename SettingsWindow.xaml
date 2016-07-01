@@ -90,13 +90,13 @@
             </Grid.ColumnDefinitions>
             <!---->
             
-            <RadioButton 
+            <RadioButton x:Name="RBSound" 
                 Grid.Row="0" 
                 Grid.Column="0" 
                 Content="Play Sound"  
                 Margin="5,0,5,0" 
                 VerticalAlignment="Center" 
-                HorizontalAlignment="Left"
+                HorizontalAlignment="Left" Checked="RBSound_Checked"
                 />
             <RadioButton x:Name="RBAudio" Grid.Row="1" Grid.Column="0" Content="Play Audio"  Margin="5,0,5,0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
             <RadioButton x:Name="RBFile" Grid.Row="2" Grid.Column="0" Content="Execute File"  Margin="5,0,5,0" VerticalAlignment="Center" HorizontalAlignment="Left"/>

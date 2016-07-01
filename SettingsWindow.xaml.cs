@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Text.RegularExpressions;
+using WPFTimer.Enums;
 namespace WPFTimer
 {
     /// <summary>
@@ -42,7 +43,12 @@ namespace WPFTimer
 
         private void btnOk_Click(object sender, RoutedEventArgs e)
         {
-           // RBAudio.Checked+={}
+            this.Close();
+        }
+
+        private void RBSound_Checked(object sender, RoutedEventArgs e)
+        {
+            MemoryBuffer._RBStateEnum = RBStateEnum.PlaySound;
         }
     }
 }
