@@ -30,7 +30,7 @@ namespace WPFTimer
 
         private void txtTurnOffTime_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
-            var _textInput = new Regex(@"^[0-5]");
+            var _textInput = new Regex(@"^[0-9]");
 
             var match = _textInput.Match(e.Text);
 
