@@ -60,7 +60,7 @@
             </Viewbox>
             
         </Button>
-        <Button  Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" Margin="5,5,10,5" Grid.Row="6" VerticalAlignment="Stretch"  Background="White">
+        <Button x:Name="btnOk"  Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" Margin="5,5,10,5" Grid.Row="6" VerticalAlignment="Stretch"  Background="White" Click="btnOk_Click">
             <Viewbox>
                 <TextBlock>
                     Ok
@@ -98,11 +98,11 @@
                 VerticalAlignment="Center" 
                 HorizontalAlignment="Left"
                 />
-            <RadioButton Grid.Row="1" Grid.Column="0" Content="Play Audio"  Margin="5,0,5,0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-            <RadioButton Grid.Row="2" Grid.Column="0" Content="Execute File"  Margin="5,0,5,0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-            <RadioButton Grid.Row="0" Grid.Column="1" Content="Trun Of"  Margin="5,0,5,0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-            <RadioButton Grid.Row="1" Grid.Column="1" Content="Hebirnate"  Margin="5,0,5,0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-            <RadioButton Grid.Row="2" Grid.Column="1" Content="Sleep"  Margin="5,0,5,0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+            <RadioButton x:Name="RBAudio" Grid.Row="1" Grid.Column="0" Content="Play Audio"  Margin="5,0,5,0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+            <RadioButton x:Name="RBFile" Grid.Row="2" Grid.Column="0" Content="Execute File"  Margin="5,0,5,0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+            <RadioButton x:Name="RBTurnOff" Grid.Row="0" Grid.Column="1" Content="Trun Off"  Margin="5,0,5,0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+            <RadioButton x:Name="RBHebirnate" Grid.Row="1" Grid.Column="1" Content="Hebirnate"  Margin="5,0,5,0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+            <RadioButton x:Name="RBSleep" Grid.Row="2" Grid.Column="1" Content="Sleep"  Margin="5,0,5,0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
         </Grid>
         
             <TextBox Grid.Column="2" FontSize="38" Text="25" x:Name="txtTurnOffTime" PreviewTextInput="txtTurnOffTime_PreviewTextInput" VerticalAlignment="Stretch" Margin="5,15,15,10" TextAlignment="Center" MaxLength="2" MaxLines="1" />

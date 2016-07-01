@@ -54,6 +54,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Enums\RBStateEnum.cs" />
     <Compile Include="MemoryBuffer.cs" />
     <Compile Include="AdditionalButtons\MyDeleteButton.cs" />
     <Compile Include="AdditionalButtons\MyTimeButton.cs" />

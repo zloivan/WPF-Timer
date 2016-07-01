@@ -25,9 +25,9 @@ namespace WPFTimer
         }
 
         
-
         
-
+        
+        
         private void txtTurnOffTime_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             var _textInput = new Regex(@"^[0-9]");
@@ -38,6 +38,11 @@ namespace WPFTimer
                 e.Handled = true;
 
             
+        }
+
+        private void btnOk_Click(object sender, RoutedEventArgs e)
+        {
+           // RBAudio.Checked+={}
         }
     }
 }
