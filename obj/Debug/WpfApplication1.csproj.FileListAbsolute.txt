@@ -1,0 +1,15 @@
+D:\WPFTimer\WpfApplication1\WpfApplication1\bin\Debug\WpfApplication1.exe.config
+D:\WPFTimer\WpfApplication1\WpfApplication1\bin\Debug\WpfApplication1.exe
+D:\WPFTimer\WpfApplication1\WpfApplication1\bin\Debug\WpfApplication1.pdb
+D:\WPFTimer\WpfApplication1\WpfApplication1\obj\Debug\MainWindow.baml
+D:\WPFTimer\WpfApplication1\WpfApplication1\obj\Debug\MainWindow.g.cs
+D:\WPFTimer\WpfApplication1\WpfApplication1\obj\Debug\App.g.cs
+D:\WPFTimer\WpfApplication1\WpfApplication1\obj\Debug\WpfApplication1_MarkupCompile.cache
+D:\WPFTimer\WpfApplication1\WpfApplication1\obj\Debug\WpfApplication1.g.resources
+D:\WPFTimer\WpfApplication1\WpfApplication1\obj\Debug\WpfApplication1.Properties.Resources.resources
+D:\WPFTimer\WpfApplication1\WpfApplication1\obj\Debug\WpfApplication1.csproj.GenerateResource.Cache
+D:\WPFTimer\WpfApplication1\WpfApplication1\obj\Debug\WpfApplication1.exe
+D:\WPFTimer\WpfApplication1\WpfApplication1\obj\Debug\WpfApplication1.pdb
+D:\WPFTimer\WpfApplication1\WpfApplication1\obj\Debug\WpfApplication1.csprojResolveAssemblyReference.cache
+D:\WPFTimer\WpfApplication1\WpfApplication1\obj\Debug\FavoriteBTN.baml
+D:\WPFTimer\WpfApplication1\WpfApplication1\obj\Debug\FavoriteBTN.g.cs
