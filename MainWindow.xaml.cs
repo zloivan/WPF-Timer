@@ -302,5 +302,11 @@ namespace WPFTimer
             SettingsWindow SetWin = new SettingsWindow();
             SetWin.ShowDialog();
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            TurnOffWarning WarningWindow = new TurnOffWarning();
+            WarningWindow.ShowDialog();
+        }
     }
 }

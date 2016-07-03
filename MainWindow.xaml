@@ -116,7 +116,7 @@
             </Button.Content>
         </Button>
         <!--Кнопка Help-->
-        <Button Grid.Column="7" VerticalAlignment="Top" HorizontalAlignment="Left" Background="White" Padding="5" Margin="5">
+        <Button Grid.Column="7" VerticalAlignment="Top" HorizontalAlignment="Left" Background="White" Padding="5" Margin="5" Click="Button_Click_1">
             <Button.Content>
                 <Image Source="Icons/1449733454_help.ico" />
             </Button.Content>
