@@ -10,7 +10,7 @@ namespace WPFTimer
     static class MemoryBuffer
     {
         public static RBStateEnum _RBStateEnum ;
-        public static int TurnOfTimer {get;set;}
+        public static int TurnOfTimeToCancel {get;set;}
         public static List<MyTimeButton> FavTimeButtons = new List<MyTimeButton>();
         
         public static List<MyDeleteButton> FavDelButtons = new List<MyDeleteButton>();
@@ -27,7 +27,7 @@ namespace WPFTimer
             _RBStateEnum = RBStateEnum.PlaySound;
             _Timer = StateEnum.Off;
             TotalSeconds = 0;
-            TurnOfTimer = 10;
+            TurnOfTimeToCancel = 10;
         }
     }
     

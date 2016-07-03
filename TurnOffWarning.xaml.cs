@@ -11,7 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-
+using System.Windows.Threading;
 
 namespace WPFTimer
 {
@@ -20,11 +20,35 @@ namespace WPFTimer
     /// </summary>
     public partial class TurnOffWarning : Window
     {
+        int TurnOfTime = MemoryBuffer.TurnOfTimeToCancel;
+        DispatcherTimer TurnOfTimer = new System.Windows.Threading.DispatcherTimer();
+        
         public TurnOffWarning()
         {
             
+ 
             InitializeComponent();
+
+            TurnOfTimer.Interval = TimeSpan.FromSeconds(1);
+            txtWarningTimer.Text = TurnOfTime.ToString();
+            TurnOfTimer.Tick += TurnOfTimer_Tick;
+            TurnOfTimer.Start();
             
+            
+            
+            
+        }
+
+        void TurnOfTimer_Tick(object sender, EventArgs e)
+        {
+            if (TurnOfTime != 0)
+            {
+                TurnOfTime--;
+                txtWarningTimer.Text = TurnOfTime.ToString();
+            }
+            else
+                TurnOfTimer.Stop();
+                
         }
     }
 }

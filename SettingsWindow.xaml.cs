@@ -15,7 +15,7 @@ namespace WPFTimer
     public partial class SettingsWindow : Window
     {
         public RBStateEnum rbstate = MemoryBuffer._RBStateEnum;
-        public int TurnOfTimer = MemoryBuffer.TurnOfTimer;
+        public int TurnOfTimer = MemoryBuffer.TurnOfTimeToCancel;
 
 
         
@@ -45,7 +45,7 @@ namespace WPFTimer
         private void btnOk_Click(object sender, RoutedEventArgs e)
         {
             MemoryBuffer._RBStateEnum = rbstate;
-            MemoryBuffer.TurnOfTimer = TurnOfTimer;
+            MemoryBuffer.TurnOfTimeToCancel = TurnOfTimer;
             this.Close();
         }
 
