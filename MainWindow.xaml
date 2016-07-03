@@ -44,7 +44,7 @@
             <ColumnDefinition Width="120*"/>
         </Grid.ColumnDefinitions>
         <!--Кнопка вверх часов-->
-        <RepeatButton  x:Name="HourUpBTN" Margin="10,0,5,5"  Grid.Column="1" HorizontalAlignment="Stretch"  Grid.Row="1" VerticalAlignment="Bottom" Padding="10" Background="White" Click="HourUpBTN_Click" >
+        <RepeatButton  x:Name="HourUpBTN" Margin="10,10,5,0"  Grid.Column="1" HorizontalAlignment="Stretch"  Grid.Row="1" VerticalAlignment="Bottom" Padding="10" Background="White" Click="HourUpBTN_Click" >
             <RepeatButton.Content>
                 <Viewbox VerticalAlignment="Stretch">
                     <Image Source="Icons/1449726457_icon-ios7-arrow-down.ico"/>
@@ -58,7 +58,7 @@
             </TextBox>
         </Viewbox>
         <!--Кнопка вниз часов-->
-        <RepeatButton Margin="10,5,5,0" x:Name="HourDownBTN" Grid.Column="1" HorizontalAlignment="Stretch"  Grid.Row="4" VerticalAlignment="Top" Padding="10" Background="White" Click="HourDownBTN_Click" >
+        <RepeatButton Margin="10,0,5,10" x:Name="HourDownBTN" Grid.Column="1" HorizontalAlignment="Stretch"  Grid.Row="4" VerticalAlignment="Top" Padding="10" Background="White" Click="HourDownBTN_Click" >
             <RepeatButton.Content>
                 <Viewbox VerticalAlignment="Stretch">
                     <Image Source="Icons/1449726656_down4.ico"/>
@@ -66,7 +66,7 @@
             </RepeatButton.Content>
         </RepeatButton>
         <!--Кнопка вверх минут-->
-        <RepeatButton Margin="5,0,10,5" x:Name="MinUpBTN"  Grid.Column="3" HorizontalAlignment="Stretch"  Grid.Row="1" VerticalAlignment="Bottom" Padding="10" Background="White" Click="MinUpBTN_Click" >
+        <RepeatButton Margin="5,10,10,0" x:Name="MinUpBTN"  Grid.Column="3" HorizontalAlignment="Stretch"  Grid.Row="1" VerticalAlignment="Bottom" Padding="10" Background="White" Click="MinUpBTN_Click" >
             <RepeatButton.Content>
                 <Viewbox VerticalAlignment="Stretch">
                     <Image Source="Icons/1449726457_icon-ios7-arrow-down.ico"/>
@@ -80,7 +80,7 @@
             </TextBox>
         </Viewbox>
         <!--Кнопка вниз минут-->
-        <RepeatButton Margin="5,5,10,0" x:Name="MinDownBTN" Grid.Column="3" HorizontalAlignment="Stretch"  Grid.Row="4" VerticalAlignment="Top" Padding="10" Background="White" Click="MinDownBTN_Click" >
+        <RepeatButton Margin="5,0,10,10" x:Name="MinDownBTN" Grid.Column="3" HorizontalAlignment="Stretch"  Grid.Row="4" VerticalAlignment="Top" Padding="10" Background="White" Click="MinDownBTN_Click" >
             <RepeatButton.Content>
                 <Viewbox VerticalAlignment="Stretch">
                     <Image Source="Icons/1449726656_down4.ico"/>
@@ -88,7 +88,7 @@
             </RepeatButton.Content>
         </RepeatButton>
         <!--Кнопка вверх секунд-->
-        <RepeatButton  Margin="5,0,10,5" x:Name="SecUpBTN"  Grid.Column="5" HorizontalAlignment="Stretch"  Grid.Row="1" VerticalAlignment="Bottom" Padding="10" Background="White" Click="SecUpBTN_Click" >
+        <RepeatButton  Margin="5,10,10,0" x:Name="SecUpBTN"  Grid.Column="5" HorizontalAlignment="Stretch"  Grid.Row="1" VerticalAlignment="Bottom" Padding="10" Background="White" Click="SecUpBTN_Click" >
             <RepeatButton.Content>
                 <Viewbox VerticalAlignment="Stretch">
                     <Image Source="Icons/1449726457_icon-ios7-arrow-down.ico"/>
@@ -102,7 +102,7 @@
             </TextBox>
         </Viewbox>
         <!--Кнопка вниз секунд-->
-        <RepeatButton Margin="5,5,10,0" x:Name="SecDownBTN" Grid.Column="5" HorizontalAlignment="Stretch"  Grid.Row="4" VerticalAlignment="Top" Padding="10" Background="White" Click="SecDownBTN_Click" >
+        <RepeatButton Margin="5,0,10,10" x:Name="SecDownBTN" Grid.Column="5" HorizontalAlignment="Stretch"  Grid.Row="4" VerticalAlignment="Top" Padding="10" Background="White" Click="SecDownBTN_Click" >
             <RepeatButton.Content>
                 <Viewbox VerticalAlignment="Stretch">
                     <Image Source="Icons/1449726656_down4.ico"/>
