@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace WPFTimer.Enums
 {
     
-    enum StateEnum
+    public enum StateEnum
     {
         On,Off,Paused,UnPaused
     }

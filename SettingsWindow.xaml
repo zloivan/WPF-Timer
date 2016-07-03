@@ -52,7 +52,7 @@
         
                 
             
-        <Button HorizontalAlignment="Stretch" Margin="10,5,5,5"  VerticalAlignment="Stretch" Grid.Column="0" Grid.Row="6" Background="White">
+        <Button x:Name="btnNotOk" HorizontalAlignment="Stretch" Margin="10,5,5,5"  VerticalAlignment="Stretch" Grid.Column="0" Grid.Row="6" Background="White" Click="btnNotOk_Click">
             <Viewbox>
                 <TextBlock>
                     not Ok
@@ -98,14 +98,14 @@
                 VerticalAlignment="Center" 
                 HorizontalAlignment="Left" Checked="RBSound_Checked"
                 />
-            <RadioButton x:Name="RBAudio" Grid.Row="1" Grid.Column="0" Content="Play Audio"  Margin="5,0,5,0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-            <RadioButton x:Name="RBFile" Grid.Row="2" Grid.Column="0" Content="Execute File"  Margin="5,0,5,0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-            <RadioButton x:Name="RBTurnOff" Grid.Row="0" Grid.Column="1" Content="Trun Off"  Margin="5,0,5,0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-            <RadioButton x:Name="RBHebirnate" Grid.Row="1" Grid.Column="1" Content="Hebirnate"  Margin="5,0,5,0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-            <RadioButton x:Name="RBSleep" Grid.Row="2" Grid.Column="1" Content="Sleep"  Margin="5,0,5,0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+            <RadioButton x:Name="RBAudio" Grid.Row="1" Grid.Column="0" Content="Play Audio"  Margin="5,0,5,0" VerticalAlignment="Center" HorizontalAlignment="Left" Checked="RBAudio_Checked" Unchecked="RBAudio_Unchecked"/>
+            <RadioButton x:Name="RBFile" Grid.Row="2" Grid.Column="0" Content="Execute File"  Margin="5,0,5,0" VerticalAlignment="Center" HorizontalAlignment="Left" Checked="RBFile_Checked" Unchecked="RBFile_Unchecked"/>
+            <RadioButton x:Name="RBTurnOff" Grid.Row="0" Grid.Column="1" Content="Trun Off"  Margin="5,0,5,0" VerticalAlignment="Center" HorizontalAlignment="Left" Checked="RBTurnOff_Checked"/>
+            <RadioButton x:Name="RBHebirnate" Grid.Row="1" Grid.Column="1" Content="Hebirnate"  Margin="5,0,5,0" VerticalAlignment="Center" HorizontalAlignment="Left" Checked="RBHebirnate_Checked"/>
+            <RadioButton x:Name="RBSleep" Grid.Row="2" Grid.Column="1" Content="Sleep"  Margin="5,0,5,0" VerticalAlignment="Center" HorizontalAlignment="Left" Checked="RBSleep_Checked"/>
         </Grid>
         
-            <TextBox Grid.Column="2" FontSize="38" Text="25" x:Name="txtTurnOffTime" PreviewTextInput="txtTurnOffTime_PreviewTextInput" VerticalAlignment="Stretch" Margin="5,15,15,10" TextAlignment="Center" MaxLength="2" MaxLines="1" />
+            <TextBox Grid.Column="2" FontSize="38"  x:Name="txtTurnOffTime" PreviewTextInput="txtTurnOffTime_PreviewTextInput" VerticalAlignment="Stretch" Margin="5,15,15,10" TextAlignment="Center" MaxLength="2" MaxLines="1" />
         
             <Viewbox Grid.Column="2" Grid.Row="4" Margin="20" >
                 <CheckBox BorderBrush="Black"/>
@@ -117,14 +117,14 @@
                 </TextBlock>
             </Viewbox>
         </Button>
-        <Button Grid.Column="2"  HorizontalAlignment="Stretch" Margin="5,10,15,10" Grid.Row="2" VerticalAlignment="Stretch"  Background="White">
+        <Button x:Name="btmBrouseAudio" Grid.Column="2"  HorizontalAlignment="Stretch" Margin="5,10,15,10" Grid.Row="2" VerticalAlignment="Stretch"  Background="White" IsEnabled="False">
             <Viewbox>
                 <TextBlock>
                     Brouse Audio
                 </TextBlock>
             </Viewbox>
         </Button>
-        <Button Grid.Column="2"  HorizontalAlignment="Stretch" Margin="5,10,15,10" Grid.Row="3" VerticalAlignment="Stretch"  Background="White">
+        <Button x:Name="btnBrouseFile" Grid.Column="2"  HorizontalAlignment="Stretch" Margin="5,10,15,10" Grid.Row="3" VerticalAlignment="Stretch"  Background="White" IsEnabled="False">
             <Viewbox>
                 <TextBlock>
                     Brouse any file

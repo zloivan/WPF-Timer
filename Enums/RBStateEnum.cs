@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WPFTimer.Enums
 {
-    enum RBStateEnum
+    public enum RBStateEnum
     {
        
         Sleep, OpenFile, Hebirnate, TurnOff, OpenAudio, PlaySound
