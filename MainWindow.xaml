@@ -5,6 +5,11 @@
     <Grid>
         <!--Создание звуков при нажатии кнопок-->
         <Grid.Resources>
+            <Style TargetType="ProgressBar">
+                <Setter Property="Background" Value="DarkGray">
+                    
+                </Setter>
+            </Style>
             <Style TargetType="RepeatButton">
                 <Style.Triggers>
                     <EventTrigger RoutedEvent="PreviewMouseDown">

@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Threading;
 
+using System.Windows.Media.Animation;
+
 namespace WPFTimer
 {
     /// <summary>
@@ -33,9 +35,7 @@ namespace WPFTimer
             txtWarningTimer.Text = TurnOfTime.ToString();
             TurnOfTimer.Tick += TurnOfTimer_Tick;
             TurnOfTimer.Start();
-            Duration duration = new Duration(TimeSpan.FromSeconds((double)TurnOfTime));
-            //DoubleAnimation animation
-            //PrBTimerVisualization.BeginAnimation(duration
+           
             
             
             

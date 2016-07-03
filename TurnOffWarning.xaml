@@ -34,40 +34,51 @@
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
         <Viewbox Grid.Column="4" Grid.Row="1" Grid.ColumnSpan="2" Grid.RowSpan="2">
             <TextBlock x:Name="txtWarningTimer">
                 
             </TextBlock>
         </Viewbox>
-        <ProgressBar x:Name="PrBTimerVisualization" Grid.Column="2" Grid.Row="3" Grid.ColumnSpan="6" Margin="5" BorderBrush="White" Foreground="Azure" />
-        <Button Grid.Column="2" Grid.ColumnSpan="6" Grid.Row="4" Margin="0">
+
+        <Button Grid.Column="1" Grid.ColumnSpan="8" Grid.Row="3" Margin="5" Grid.RowSpan="2">
             <Viewbox>
                 <TextBlock>
                     Stop
                 </TextBlock>
             </Viewbox>
         </Button>
-        <Button Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="5" Margin="0,5,0,0">
+        <Button Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="5" Margin="5" Grid.RowSpan="2">
             <Viewbox>
                 <TextBlock>
                     15m
                 </TextBlock>
             </Viewbox>
         </Button>
-        <Button Grid.Column="4" Grid.ColumnSpan="2" Grid.Row="5" Margin="0,5,0,0">
+        <Button Grid.Column="4" Grid.ColumnSpan="2" Grid.Row="5" Margin="5" Grid.RowSpan="2">
             <Viewbox>
                 <TextBlock>
                  30m
                 </TextBlock>
             </Viewbox>
         </Button>
-        <Button Grid.Column="7" Grid.ColumnSpan="2" Grid.Row="5" Margin="0,5,0,0">
+        <Button Grid.Column="7" Grid.ColumnSpan="2" Grid.Row="5" Margin="5" Grid.RowSpan="2">
             <Viewbox>
                 <TextBlock>
                 1h
                 </TextBlock>
             </Viewbox>
         </Button>
+        <Border Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="8" Grid.RowSpan="8" Margin="0" CornerRadius="5" BorderThickness="0.5">
+            <Border.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FFFBF9F9" Offset="1"/>
+                    <GradientStop Color="#FF838383" Offset="0.586"/>
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+        </Border>
+
     </Grid>
 </Window>
