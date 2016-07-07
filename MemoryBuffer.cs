@@ -9,15 +9,16 @@ namespace WPFTimer
 {
     static class MemoryBuffer
     {
-        public static SettingRadioButtonsState ChosenRadioButtonState ;
+        public static SettingRadioButtonsState ChosenRadioButtonState { get; set; }
         public static int TurnOfTimeToCancel {get;set;}
+
         public static List<MyTimeButton> FavTimeButtons = new List<MyTimeButton>();
         
         public static List<MyDeleteButton> FavDelButtons = new List<MyDeleteButton>();
-        //?
+        
         public static List<TimeSettings> FavTimeData = new List<TimeSettings>();
 
-        public static TimerState CurrentState;
+        public static TimerState CurrentState{get;set;}
         public static int StartingTime { get; set; }
         public static int TotalSeconds { get; set; }
 
