@@ -114,8 +114,8 @@ namespace WPFTimer
                 {
                     VisualUpdateTimerON();
                     MemoryBuffer.CurrentState = TimerState.On;
-                    MemoryBuffer.TotalSeconds--;
-                    TextBoxDataRefresh();
+                    //MemoryBuffer.TotalSeconds--;
+                    //TextBoxDataRefresh();
                     Timer.Start();
                 }
             }
@@ -153,6 +153,8 @@ namespace WPFTimer
                 MemoryBuffer.CurrentState = TimerState.Off;
                 Timer.Stop();
                 VisualUpdateTimerOFF();
+                var warningWindow = new TurnOffWarning();
+                warningWindow.ShowDialog();
             }
         }
         #region Визуальные преображения с включением таймера
@@ -289,8 +291,8 @@ namespace WPFTimer
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            TurnOffWarning WarningWindow = new TurnOffWarning();
-            WarningWindow.ShowDialog();
+            //TurnOffWarning WarningWindow = new TurnOffWarning();
+            //WarningWindow.ShowDialog();
         }
     }
 }

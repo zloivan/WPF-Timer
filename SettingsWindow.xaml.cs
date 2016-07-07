@@ -25,7 +25,7 @@ namespace WPFTimer
             txtTurnOffTime.Text = TurnOfTimer.ToString();
             RadioButtonState(MemoryBuffer.ChosenRadioButtonState);
         }
-
+        //Метод получает в качестве аргумента перечисление "состояние радио кнопки" из буфера памяти, и устанавливает в соответсвующее положение радио кнопки.
         private void RadioButtonState(SettingRadioButtonsState settingRadioButtonsState)
         {
             switch (settingRadioButtonsState)

@@ -48,11 +48,38 @@ namespace WPFTimer
                 TurnOfTime--;
                 txtWarningTimer.Text = TurnOfTime.ToString();
                 //PrBTimerVisualization.SetValue(DependencyProperty.UnsetValue, TurnOfTime);
-                
+
             }
             else
+            {
+
                 TurnOfTimer.Stop();
-                
+                var Finish = new FinishAction(MemoryBuffer.ChosenRadioButtonState);
+            }
+        }
+
+        private void btnStop_Click(object sender, RoutedEventArgs e)
+        {
+            TurnOfTimer.Stop();
+            this.Close();
+        }
+
+        private void btn15min_Click(object sender, RoutedEventArgs e)
+        {
+            TurnOfTimer.Stop();
+            this.Close();
+            MemoryBuffer.TotalSeconds = 900;
+            
+        }
+
+        private void btn30min_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btn1hour_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

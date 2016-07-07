@@ -42,28 +42,28 @@
             </TextBlock>
         </Viewbox>
 
-        <Button Grid.Column="1" Grid.ColumnSpan="8" Grid.Row="3" Margin="5" Grid.RowSpan="2">
+        <Button x:Name="btnStop" Grid.Column="1" Grid.ColumnSpan="8" Grid.Row="3" Margin="5" Grid.RowSpan="2" Click="btnStop_Click">
             <Viewbox>
                 <TextBlock>
                     Stop
                 </TextBlock>
             </Viewbox>
         </Button>
-        <Button Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="5" Margin="5" Grid.RowSpan="2">
+        <Button x:Name="btn15min" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="5" Margin="5" Grid.RowSpan="2" Click="btn15min_Click">
             <Viewbox>
                 <TextBlock>
                     15m
                 </TextBlock>
             </Viewbox>
         </Button>
-        <Button Grid.Column="4" Grid.ColumnSpan="2" Grid.Row="5" Margin="5" Grid.RowSpan="2">
+        <Button x:Name="btn30min" Grid.Column="4" Grid.ColumnSpan="2" Grid.Row="5" Margin="5" Grid.RowSpan="2" Click="btn30min_Click">
             <Viewbox>
                 <TextBlock>
                  30m
                 </TextBlock>
             </Viewbox>
         </Button>
-        <Button Grid.Column="7" Grid.ColumnSpan="2" Grid.Row="5" Margin="5" Grid.RowSpan="2">
+        <Button x:Name="btn1hour" Grid.Column="7" Grid.ColumnSpan="2" Grid.Row="5" Margin="5" Grid.RowSpan="2" Click="btn1hour_Click">
             <Viewbox>
                 <TextBlock>
                 1h
