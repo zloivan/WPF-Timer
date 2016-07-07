@@ -14,7 +14,7 @@ namespace WPFTimer
     /// </summary>
     public partial class SettingsWindow : Window
     {
-        public SettingRadioButtonsState rbstate = MemoryBuffer.ChosenRadioButtonState;
+        public SettingRadioButtonsState CurrentOperationRadioButtonState = MemoryBuffer.ChosenRadioButtonState;
         public int TurnOfTimer = MemoryBuffer.TurnOfTimeToCancel;
 
 
@@ -23,7 +23,28 @@ namespace WPFTimer
         {
             InitializeComponent();
             txtTurnOffTime.Text = TurnOfTimer.ToString();
-          
+            RadioButtonState(MemoryBuffer.ChosenRadioButtonState);
+        }
+
+        private void RadioButtonState(SettingRadioButtonsState settingRadioButtonsState)
+        {
+            switch (settingRadioButtonsState)
+            {
+                case SettingRadioButtonsState.PlaySound: RBSound.IsChecked = true;
+                    break;
+                case SettingRadioButtonsState.OpenFile: RBFile.IsChecked = true;
+                    break;
+                case SettingRadioButtonsState.Hebirnate: RBHebirnate.IsChecked = true;
+                    break;
+                case SettingRadioButtonsState.OpenAudio: RBAudio.IsChecked = true;
+                    break;
+                case SettingRadioButtonsState.Sleep: RBSleep.IsChecked = true;
+                    break;
+                case SettingRadioButtonsState.TurnOff: RBTurnOff.IsChecked = true;
+                    break;
+                default :RBSound.IsChecked=true;
+                    break;
+            }
         }
 
         
@@ -44,19 +65,19 @@ namespace WPFTimer
 
         private void btnOk_Click(object sender, RoutedEventArgs e)
         {
-            MemoryBuffer.ChosenRadioButtonState = rbstate;
+            MemoryBuffer.ChosenRadioButtonState = CurrentOperationRadioButtonState;
             MemoryBuffer.TurnOfTimeToCancel = TurnOfTimer;
             this.Close();
         }
 
         private void RBSound_Checked(object sender, RoutedEventArgs e)
         {
-            rbstate = SettingRadioButtonsState.PlaySound;
+            CurrentOperationRadioButtonState = SettingRadioButtonsState.PlaySound;
         }
 
         private void RBAudio_Checked(object sender, RoutedEventArgs e)
         {
-            rbstate = SettingRadioButtonsState.OpenAudio;
+            CurrentOperationRadioButtonState = SettingRadioButtonsState.OpenAudio;
             btmBrouseAudio.IsEnabled = true;
         }
 
@@ -67,7 +88,7 @@ namespace WPFTimer
 
         private void RBFile_Checked(object sender, RoutedEventArgs e)
         {
-            rbstate = SettingRadioButtonsState.OpenFile;
+            CurrentOperationRadioButtonState = SettingRadioButtonsState.OpenFile;
             btnBrouseFile.IsEnabled = true;
         }
 
@@ -78,17 +99,17 @@ namespace WPFTimer
 
         private void RBTurnOff_Checked(object sender, RoutedEventArgs e)
         {
-            rbstate = SettingRadioButtonsState.TurnOff;
+            CurrentOperationRadioButtonState = SettingRadioButtonsState.TurnOff;
         }
 
         private void RBHebirnate_Checked(object sender, RoutedEventArgs e)
         {
-            rbstate = SettingRadioButtonsState.Hebirnate;
+            CurrentOperationRadioButtonState = SettingRadioButtonsState.Hebirnate;
         }
 
         private void RBSleep_Checked(object sender, RoutedEventArgs e)
         {
-            rbstate = SettingRadioButtonsState.Sleep;
+            CurrentOperationRadioButtonState = SettingRadioButtonsState.Sleep;
         }
 
         private void btnNotOk_Click(object sender, RoutedEventArgs e)
