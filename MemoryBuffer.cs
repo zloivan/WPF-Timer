@@ -9,7 +9,7 @@ namespace WPFTimer
 {
     static class MemoryBuffer
     {
-        public static RBStateEnum _RBStateEnum ;
+        public static SettingRadioButtonsState ChosenRadioButtonState ;
         public static int TurnOfTimeToCancel {get;set;}
         public static List<MyTimeButton> FavTimeButtons = new List<MyTimeButton>();
         
@@ -17,15 +17,15 @@ namespace WPFTimer
         //?
         public static List<TimeSettings> FavTimeData = new List<TimeSettings>();
 
-        public static StateEnum _Timer;
+        public static TimerState CurrentState;
         public static int StartingTime { get; set; }
         public static int TotalSeconds { get; set; }
 
         
         static MemoryBuffer()
         {
-            _RBStateEnum = RBStateEnum.PlaySound;
-            _Timer = StateEnum.Off;
+            ChosenRadioButtonState = SettingRadioButtonsState.PlaySound;
+            CurrentState = TimerState.Off;
             TotalSeconds = 0;
             TurnOfTimeToCancel = 10;
         }

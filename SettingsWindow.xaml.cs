@@ -14,7 +14,7 @@ namespace WPFTimer
     /// </summary>
     public partial class SettingsWindow : Window
     {
-        public RBStateEnum rbstate = MemoryBuffer._RBStateEnum;
+        public SettingRadioButtonsState rbstate = MemoryBuffer.ChosenRadioButtonState;
         public int TurnOfTimer = MemoryBuffer.TurnOfTimeToCancel;
 
 
@@ -44,19 +44,19 @@ namespace WPFTimer
 
         private void btnOk_Click(object sender, RoutedEventArgs e)
         {
-            MemoryBuffer._RBStateEnum = rbstate;
+            MemoryBuffer.ChosenRadioButtonState = rbstate;
             MemoryBuffer.TurnOfTimeToCancel = TurnOfTimer;
             this.Close();
         }
 
         private void RBSound_Checked(object sender, RoutedEventArgs e)
         {
-            rbstate = RBStateEnum.PlaySound;
+            rbstate = SettingRadioButtonsState.PlaySound;
         }
 
         private void RBAudio_Checked(object sender, RoutedEventArgs e)
         {
-            rbstate = RBStateEnum.OpenAudio;
+            rbstate = SettingRadioButtonsState.OpenAudio;
             btmBrouseAudio.IsEnabled = true;
         }
 
@@ -67,7 +67,7 @@ namespace WPFTimer
 
         private void RBFile_Checked(object sender, RoutedEventArgs e)
         {
-            rbstate = RBStateEnum.OpenFile;
+            rbstate = SettingRadioButtonsState.OpenFile;
             btnBrouseFile.IsEnabled = true;
         }
 
@@ -78,17 +78,17 @@ namespace WPFTimer
 
         private void RBTurnOff_Checked(object sender, RoutedEventArgs e)
         {
-            rbstate = RBStateEnum.TurnOff;
+            rbstate = SettingRadioButtonsState.TurnOff;
         }
 
         private void RBHebirnate_Checked(object sender, RoutedEventArgs e)
         {
-            rbstate = RBStateEnum.Hebirnate;
+            rbstate = SettingRadioButtonsState.Hebirnate;
         }
 
         private void RBSleep_Checked(object sender, RoutedEventArgs e)
         {
-            rbstate = RBStateEnum.Sleep;
+            rbstate = SettingRadioButtonsState.Sleep;
         }
 
         private void btnNotOk_Click(object sender, RoutedEventArgs e)

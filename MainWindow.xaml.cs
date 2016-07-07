@@ -118,7 +118,7 @@ namespace WPFTimer
         
         private void StartBTN_Click(object sender, RoutedEventArgs e)
         {
-            if (MemoryBuffer._Timer == StateEnum.Off)
+            if (MemoryBuffer.CurrentState == TimerState.Off)
             {
                 
                 h.TimeValue = Convert.ToInt32(HourTXTB.Text);
@@ -128,33 +128,33 @@ namespace WPFTimer
                 MemoryBuffer.StartingTime = MemoryBuffer.TotalSeconds;
                 if (MemoryBuffer.TotalSeconds != 0)
                 {
-                    TimerON();
-                    MemoryBuffer._Timer = StateEnum.On;
+                    VisualUpdateTimerON();
+                    MemoryBuffer.CurrentState = TimerState.On;
                     MemoryBuffer.TotalSeconds--;
                     TextBoxDataRefresh();
                     Timer.Start();
                 }
             }
             else
-                if(MemoryBuffer._Timer==StateEnum.On)
+                if(MemoryBuffer.CurrentState==TimerState.On)
             {
                 Timer.Stop();
                 MemoryBuffer.TotalSeconds = MemoryBuffer.StartingTime;
                 
                 
                 
-                TimerOFF();
+                VisualUpdateTimerOFF();
                 TextBoxDataRefresh();
-                MemoryBuffer._Timer = StateEnum.Off;
+                MemoryBuffer.CurrentState = TimerState.Off;
             }
-                else if (MemoryBuffer._Timer == StateEnum.Paused)
+                else if (MemoryBuffer.CurrentState == TimerState.Paused)
                 {
                     
                     MemoryBuffer.TotalSeconds = MemoryBuffer.StartingTime;
-                    //TextBoxDataRefresh();
+                    
 
-                    TimerOFF();
-                    MemoryBuffer._Timer = StateEnum.Off;
+                    VisualUpdateTimerOFF();
+                    MemoryBuffer.CurrentState = TimerState.Off;
                     TextBoxDataRefresh();
                 }
                 
@@ -166,13 +166,13 @@ namespace WPFTimer
             TextBoxDataRefresh();
             if (MemoryBuffer.TotalSeconds == 0) 
             {
-                MemoryBuffer._Timer = StateEnum.Off;
+                MemoryBuffer.CurrentState = TimerState.Off;
                 Timer.Stop();
-                TimerOFF();
+                VisualUpdateTimerOFF();
             }
         }
         #region Визуальные преображения с включением таймера
-        private void TimerON()
+        private void VisualUpdateTimerON()
         {
             BTNStartContent.Text = "Clear";
             PauseBTNContent.Text = "Pause";
@@ -191,7 +191,7 @@ namespace WPFTimer
             Expander.IsEnabled = false;
            
         }
-        private void TimerOFF()
+        private void VisualUpdateTimerOFF()
         {
             BTNStartContent.Text = "Start";
             PauseBTNContent.Text = "Pause";
@@ -208,7 +208,7 @@ namespace WPFTimer
             Expander.IsEnabled = true;
 
         }
-        private void TimerPaused()
+        private void VisualUpdateTimerPaused()
         {
             BTNStartContent.Text = "Clear";
             PauseBTNContent.Text = "Go On";
@@ -232,17 +232,17 @@ namespace WPFTimer
 
         private void PauseBTN_Click(object sender, RoutedEventArgs e)
         {
-            if (MemoryBuffer._Timer == StateEnum.On)
+            if (MemoryBuffer.CurrentState == TimerState.On)
             {
                 Timer.Stop();
-                MemoryBuffer._Timer = StateEnum.Paused;
-                TimerPaused();
+                MemoryBuffer.CurrentState = TimerState.Paused;
+                VisualUpdateTimerPaused();
             }
             else
             {
                 Timer.Start();
-                MemoryBuffer._Timer = StateEnum.On;
-                TimerON();
+                MemoryBuffer.CurrentState = TimerState.On;
+                VisualUpdateTimerON();
             }
         }
 
