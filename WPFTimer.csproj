@@ -64,6 +64,7 @@
     <Compile Include="ShutDownClass.cs" />
     <Compile Include="Enums\StateEnum.cs" />
     <Compile Include="TimeEntities.cs" />
+    <Compile Include="Timer.cs" />
     <Compile Include="TurnOffWarning.xaml.cs">
       <DependentUpon>TurnOffWarning.xaml</DependentUpon>
     </Compile>

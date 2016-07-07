@@ -87,23 +87,7 @@ namespace WPFTimer
             SecTXTB.Text = s.ToString();
         }
 
-        private void HourTXTB_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            
-          
-            
-        }
-        private void MinTXTB_TextChanged(object sender, TextChangedEventArgs e)
-        {
-           
-
-            
-        }
-        private void SecTXTB_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            
-            
-        }
+        
         //Метод обновляет данные в текстбоксах
         private void TextBoxDataRefresh()
         {

@@ -58,7 +58,7 @@
         </RepeatButton>
         <!--TextBox часов-->
         <Viewbox  Grid.Column="1" Grid.Row="2" Grid.RowSpan="2"  >
-            <TextBox x:Name="HourTXTB" VerticalAlignment="Stretch" BorderThickness="0" HorizontalAlignment="Center" Focusable="False">
+            <TextBox x:Name="HourTXTB" VerticalAlignment="Stretch" BorderThickness="0" HorizontalAlignment="Center" Focusable="False" Cursor="Arrow">
                 0
             </TextBox>
         </Viewbox>
@@ -80,7 +80,7 @@
         </RepeatButton>
         <!--TextBox минут-->
         <Viewbox Grid.Column="3" Grid.Row="2" Grid.RowSpan="2"  >
-            <TextBox x:Name="MinTXTB" VerticalAlignment="Stretch" BorderThickness="0" HorizontalAlignment="Center" Focusable="False">
+            <TextBox x:Name="MinTXTB" VerticalAlignment="Stretch" BorderThickness="0" HorizontalAlignment="Center" Focusable="False" Cursor="Arrow">
                 0
             </TextBox>
         </Viewbox>
@@ -102,7 +102,7 @@
         </RepeatButton>
         <!--TextBox секунд-->
         <Viewbox Grid.Column="5" Grid.Row="2" Grid.RowSpan="2"  >
-            <TextBox x:Name="SecTXTB" VerticalAlignment="Stretch" BorderThickness="0" HorizontalAlignment="Center" Focusable="False">
+            <TextBox x:Name="SecTXTB" VerticalAlignment="Stretch" BorderThickness="0" HorizontalAlignment="Center" Focusable="False" Cursor="Arrow">
                 0
             </TextBox>
         </Viewbox>
