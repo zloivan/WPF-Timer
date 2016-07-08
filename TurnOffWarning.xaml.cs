@@ -34,18 +34,18 @@ namespace WPFTimer
         }
         public TurnOffWarning()
         {
-            
- 
+
+
             InitializeComponent();
 
             TurnOfTimer.Interval = TimeSpan.FromSeconds(1);
             txtWarningTimer.Text = TurnOfTime.ToString();
             TurnOfTimer.Tick += TurnOfTimer_Tick;
             TurnOfTimer.Start();
-           
-            
-            
-            
+
+
+
+
         }
 
         void TurnOfTimer_Tick(object sender, EventArgs e)
@@ -77,8 +77,8 @@ namespace WPFTimer
             this.Close();
             MemoryBuffer.TotalSeconds = 900;
             OnAditionalButtonClick();
-            
-            
+
+
         }
 
         private void btn30min_Click(object sender, RoutedEventArgs e)

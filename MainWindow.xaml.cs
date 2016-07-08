@@ -37,69 +37,71 @@ namespace WPFTimer
             InitializeComponent();
             //после инициализации окна обновляется информация в textbox-ах.
 
-            
-            Timer.Tick+=new EventHandler(Timer_tick);
-            Timer.Interval = new TimeSpan(0,0,1);
 
-            RefreshFavButtons(MemoryBuffer.FavTimeButtons,MemoryBuffer.FavDelButtons);
+            Timer.Tick += new EventHandler(Timer_tick);
+            Timer.Interval = new TimeSpan(0, 0, 1);
+
+            RefreshFavButtons(MemoryBuffer.FavTimeButtons, MemoryBuffer.FavDelButtons);
 
             MemoryBuffer.TotalTimeChanged += ChangeTextBoxData;
-            
+
         }
 
         void ChangeTextBoxData(object sender, TimeEventArgs e)
         {
-            HourTXTB.Text = MemoryBuffer.ReturnHours().ToString()+"h";
-            MinTXTB.Text = MemoryBuffer.ReturnMinutes().ToString()+"m";
-            SecTXTB.Text = MemoryBuffer.ReturnSeconds().ToString()+"s";
+
+            HourTXTB.Text = MemoryBuffer.ReturnHours().ToString();
+            MinTXTB.Text = MemoryBuffer.ReturnMinutes().ToString();
+            SecTXTB.Text = MemoryBuffer.ReturnSeconds().ToString();
+
 
         }
 
         #region Изменения значения текстбоксов
         private void HourUpBTN_Click(object sender, RoutedEventArgs e)
         {
-            
+
             MemoryBuffer.PlusHour();
         }
 
         private void HourDownBTN_Click(object sender, RoutedEventArgs e)
         {
-           
+
             MemoryBuffer.MinusHour();
         }
 
         private void MinUpBTN_Click(object sender, RoutedEventArgs e)
         {
-            
+
             MemoryBuffer.PlusMinute();
         }
 
         private void MinDownBTN_Click(object sender, RoutedEventArgs e)
         {
-            
+
             MemoryBuffer.MinusMinute();
         }
 
         private void SecUpBTN_Click(object sender, RoutedEventArgs e)
         {
-            
+
             MemoryBuffer.PlusSecond();
         }
 
         private void SecDownBTN_Click(object sender, RoutedEventArgs e)
         {
-            
+
             MemoryBuffer.MinusSecond();
         }
 
-        
-       
-        
+
+
+
         #endregion
-        
+
         private void StartBTN_Click(object sender, RoutedEventArgs e)
         {
-            
+
             switch (MemoryBuffer.CurrentState)
             {
                 case TimerState.Off:
@@ -110,7 +112,7 @@ namespace WPFTimer
                             Timer.Start();
                             VisualUpdateTimerON();
                             MemoryBuffer.CurrentState = TimerState.On;
-                            
+
                         }
                     }
                     break;
@@ -129,7 +131,7 @@ namespace WPFTimer
 
                         VisualUpdateTimerOFF();
                         MemoryBuffer.CurrentState = TimerState.Off;
-                        
+
                     }
                     break;
             }
@@ -138,8 +140,8 @@ namespace WPFTimer
         {
             MemoryBuffer.TotalSeconds--;
 
-            
-            if (MemoryBuffer.TotalSeconds == 0) 
+
+            if (MemoryBuffer.TotalSeconds == 0)
             {
                 MemoryBuffer.CurrentState = TimerState.Off;
                 Timer.Stop();
@@ -191,14 +193,25 @@ namespace WPFTimer
         {
             BTNStartContent.Text = "Clear";
             PauseBTNContent.Text = "Pause";
-            Grid.SetRow(HourTXTB, 1);
-            Grid.SetRowSpan(HourTXTB, 3);
-            Grid.SetRow(MinTXTB, 1);
-            Grid.SetRowSpan(MinTXTB, 3);
-            Grid.SetRow(SecTXTB, 1);
-            Grid.SetRowSpan(SecTXTB, 3);
+            Grid.SetRow(HourTxtViwbx, 2);
+            Grid.SetRowSpan(HourTxtViwbx, 4);
+            Grid.SetRow(MinTxtViwbx, 2);
+            Grid.SetRowSpan(MinTxtViwbx, 4);
+            Grid.SetRow(SecTxtViwbx, 2);
+            Grid.SetRowSpan(SecTxtViwbx, 4);
+            Grid.SetColumnSpan(HourTxtViwbx, 2);
+            Grid.SetColumnSpan(MinTxtViwbx, 2);
+            Grid.SetColumnSpan(SecTxtViwbx, 2);
+            hVewbx.Visibility = Visibility.Hidden;
+            mVewBx.Visibility = Visibility.Hidden;
+            sVewBx.Visibility = Visibility.Hidden;
+            HourTxtViwbx.HorizontalAlignment = HorizontalAlignment.Center;
+            MinTxtViwbx.HorizontalAlignment = HorizontalAlignment.Center;
+            SecTxtViwbx.HorizontalAlignment = HorizontalAlignment.Center;
             MinSecDoubleDot.Visibility = Visibility.Visible;
             HourMinDoubleDot.Visibility = Visibility.Visible;
+
+
             HourDownBTN.Visibility = Visibility.Hidden;
             HourUpBTN.Visibility = Visibility.Hidden;
             MinDownBTN.Visibility = Visibility.Hidden;
@@ -206,32 +219,42 @@ namespace WPFTimer
             SecDownBTN.Visibility = Visibility.Hidden;
             SecUpBTN.Visibility = Visibility.Hidden;
 
-            
+
             PauseBTN.IsEnabled = true;
             Expander.IsEnabled = false;
-           
+
         }
         private void VisualUpdateTimerOFF()
         {
             BTNStartContent.Text = "Start";
             PauseBTNContent.Text = "Pause";
 
-            Grid.SetRow(HourTXTB, 2);
-            Grid.SetRowSpan(HourTXTB, 2);
-            Grid.SetRow(MinTXTB, 2);
-            Grid.SetRowSpan(MinTXTB, 2);
-            Grid.SetRow(SecTXTB, 2);
-            Grid.SetRowSpan(SecTXTB, 2);
+            Grid.SetRow(HourTxtViwbx, 3);
+            Grid.SetRowSpan(HourTxtViwbx, 2);
+            Grid.SetRow(MinTxtViwbx, 3);
+            Grid.SetRowSpan(MinTxtViwbx, 2);
+            Grid.SetRow(SecTxtViwbx, 3);
+            Grid.SetRowSpan(SecTxtViwbx, 2);
+            Grid.SetColumnSpan(HourTxtViwbx, 1);
+            Grid.SetColumnSpan(MinTxtViwbx, 1);
+            Grid.SetColumnSpan(SecTxtViwbx, 1);
             MinSecDoubleDot.Visibility = Visibility.Hidden;
             HourMinDoubleDot.Visibility = Visibility.Hidden;
+            HourTxtViwbx.HorizontalAlignment = HorizontalAlignment.Right;
+            MinTxtViwbx.HorizontalAlignment = HorizontalAlignment.Right;
+            SecTxtViwbx.HorizontalAlignment = HorizontalAlignment.Right;
 
+            
+            hVewbx.Visibility = Visibility.Visible;
+            mVewBx.Visibility = Visibility.Visible;
+            sVewBx.Visibility = Visibility.Visible;
             HourDownBTN.Visibility = Visibility.Visible;
             HourUpBTN.Visibility = Visibility.Visible;
             MinDownBTN.Visibility = Visibility.Visible;
             MinUpBTN.Visibility = Visibility.Visible;
             SecDownBTN.Visibility = Visibility.Visible;
             SecUpBTN.Visibility = Visibility.Visible;
-            
+
             PauseBTN.IsEnabled = false;
             Expander.IsEnabled = true;
 
@@ -241,15 +264,25 @@ namespace WPFTimer
             BTNStartContent.Text = "Clear";
             PauseBTNContent.Text = "Go On";
 
-           // HourTXTB
-            Grid.SetRow(HourTXTB, 1);
-            Grid.SetRowSpan(HourTXTB, 3);
-            Grid.SetRow(MinTXTB, 1);
-            Grid.SetRowSpan(MinTXTB, 3);
-            Grid.SetRow(SecTXTB, 1);
-            Grid.SetRowSpan(SecTXTB, 3);
+            // HourTXTB
+
+            Grid.SetRow(HourTxtViwbx, 2);
+            Grid.SetRowSpan(HourTxtViwbx, 4);
+            Grid.SetRow(MinTxtViwbx, 2);
+            Grid.SetRowSpan(MinTxtViwbx, 4);
+            Grid.SetRow(SecTxtViwbx, 2);
+            Grid.SetRowSpan(SecTxtViwbx, 4);
+            Grid.SetColumnSpan(HourTxtViwbx, 2);
+            Grid.SetColumnSpan(MinTxtViwbx, 2);
+            Grid.SetColumnSpan(SecTxtViwbx, 2);
             MinSecDoubleDot.Visibility = Visibility.Visible;
             HourMinDoubleDot.Visibility = Visibility.Visible;
+            HourTxtViwbx.HorizontalAlignment = HorizontalAlignment.Center;
+            MinTxtViwbx.HorizontalAlignment = HorizontalAlignment.Center;
+            SecTxtViwbx.HorizontalAlignment = HorizontalAlignment.Center;
+            hVewbx.Visibility = Visibility.Hidden;
+            mVewBx.Visibility = Visibility.Hidden;
+            sVewBx.Visibility = Visibility.Hidden;
 
             HourDownBTN.Visibility = Visibility.Hidden;
             HourUpBTN.Visibility = Visibility.Hidden;
@@ -257,8 +290,8 @@ namespace WPFTimer
             MinUpBTN.Visibility = Visibility.Hidden;
             SecDownBTN.Visibility = Visibility.Hidden;
             SecUpBTN.Visibility = Visibility.Hidden;
-            
-            
+
+
 
             PauseBTN.IsEnabled = true;
             Expander.IsEnabled = false;
@@ -302,7 +335,7 @@ namespace WPFTimer
                         int index = MemoryBuffer.FavTimeButtons.IndexOf(temp);
                         MemoryBuffer.TotalSeconds = MemoryBuffer.FavTimeData[index];
 
-                        
+
                     };
 
                 MemoryBuffer.FavDelButtons.Last().Click += (object sender1, RoutedEventArgs empty) =>
@@ -318,7 +351,7 @@ namespace WPFTimer
 
                 };
             }
-            
+
         }
         private void RefreshFavButtons(List<MyTimeButton> t, List<MyDeleteButton> d)
         {
