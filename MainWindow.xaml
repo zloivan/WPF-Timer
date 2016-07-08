@@ -2,7 +2,7 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Timer" Height="1015" Width="927" MinWidth="435" MinHeight="300" MaxWidth="800" MaxHeight="500" Icon="Icons/1449733481_timer.ico">
-    <Grid>
+    <Grid x:Name="grdMain">
         <!--Создание звуков при нажатии кнопок-->
         <Grid.Resources>
             <Style TargetType="ProgressBar">
@@ -59,7 +59,7 @@
         <!--TextBox часов-->
         <Viewbox  Grid.Column="1" Grid.Row="2" Grid.RowSpan="2"  >
             <TextBox x:Name="HourTXTB" VerticalAlignment="Stretch" BorderThickness="0" HorizontalAlignment="Center" Focusable="False" Cursor="Arrow">
-                0
+                0h
             </TextBox>
         </Viewbox>
         <!--Кнопка вниз часов-->
@@ -81,7 +81,7 @@
         <!--TextBox минут-->
         <Viewbox Grid.Column="3" Grid.Row="2" Grid.RowSpan="2"  >
             <TextBox x:Name="MinTXTB" VerticalAlignment="Stretch" BorderThickness="0" HorizontalAlignment="Center" Focusable="False" Cursor="Arrow">
-                0
+                0m
             </TextBox>
         </Viewbox>
         <!--Кнопка вниз минут-->
@@ -103,7 +103,7 @@
         <!--TextBox секунд-->
         <Viewbox Grid.Column="5" Grid.Row="2" Grid.RowSpan="2"  >
             <TextBox x:Name="SecTXTB" VerticalAlignment="Stretch" BorderThickness="0" HorizontalAlignment="Center" Focusable="False" Cursor="Arrow">
-                0
+                0s
             </TextBox>
         </Viewbox>
         <!--Кнопка вниз секунд-->
@@ -121,7 +121,7 @@
             </Button.Content>
         </Button>
         <!--Кнопка Help-->
-        <Button Grid.Column="7" VerticalAlignment="Top" HorizontalAlignment="Left" Background="White" Padding="5" Margin="5" Click="Button_Click_1">
+        <Button Grid.Column="7" VerticalAlignment="Top" HorizontalAlignment="Left" Background="White" Padding="5" Margin="5"  >
             <Button.Content>
                 <Image Source="Icons/1449733454_help.ico" />
             </Button.Content>
@@ -142,13 +142,13 @@
 
         </Border>
         <!--Двоеточие между часами и минутами-->
-        <Viewbox Grid.Column="2" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5,0" Grid.RowSpan="2">
+        <Viewbox Name="HourMinDoubleDot" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5,0" Grid.RowSpan="3" Visibility="Hidden">
             <TextBlock >
             :
             </TextBlock>
         </Viewbox>
         <!--Двоеточие между минутами и секундами-->
-        <Viewbox Grid.Column="4" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="6,0,5,0" Grid.RowSpan="2">
+        <Viewbox Name="MinSecDoubleDot" Grid.Column="4" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="6,0,5,0" Grid.RowSpan="3" Visibility="Hidden">
             <TextBlock >
             :
             </TextBlock>

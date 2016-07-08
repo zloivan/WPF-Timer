@@ -19,7 +19,6 @@ using WPFTimer.AdditionalButtons;
 using WPFTimer.Enums;
 
 
-
 namespace WPFTimer
 {
     /// <summary>
@@ -27,134 +26,164 @@ namespace WPFTimer
     /// </summary>
     public partial class MainWindow : Window
     {
+
+
+
+
+
         DispatcherTimer Timer = new DispatcherTimer();
-        
-       
-        Hours h = new Hours();
-        Minutes m = new Minutes();
-        Seconds s = new Seconds();
-        
-        
-            
-        
         public MainWindow()
         {
             InitializeComponent();
             //после инициализации окна обновляется информация в textbox-ах.
-            TextBoxDataRefresh();
 
+            
             Timer.Tick+=new EventHandler(Timer_tick);
             Timer.Interval = new TimeSpan(0,0,1);
 
             RefreshFavButtons(MemoryBuffer.FavTimeButtons,MemoryBuffer.FavDelButtons);
+
+            MemoryBuffer.TotalTimeChanged += ChangeTextBoxData;
             
+        }
+
+        void ChangeTextBoxData(object sender, TimeEventArgs e)
+        {
+            HourTXTB.Text = MemoryBuffer.ReturnHours().ToString()+"h";
+            MinTXTB.Text = MemoryBuffer.ReturnMinutes().ToString()+"m";
+            SecTXTB.Text = MemoryBuffer.ReturnSeconds().ToString()+"s";
+
         }
 
         #region Изменения значения текстбоксов
         private void HourUpBTN_Click(object sender, RoutedEventArgs e)
         {
-            h.Next();
-            HourTXTB.Text = h.ToString();
+            
+            MemoryBuffer.PlusHour();
         }
 
         private void HourDownBTN_Click(object sender, RoutedEventArgs e)
         {
-            h.Previe();
-            HourTXTB.Text = h.ToString();
+           
+            MemoryBuffer.MinusHour();
         }
 
         private void MinUpBTN_Click(object sender, RoutedEventArgs e)
         {
-            m.Next();
-            MinTXTB.Text = m.ToString();
+            
+            MemoryBuffer.PlusMinute();
         }
 
         private void MinDownBTN_Click(object sender, RoutedEventArgs e)
         {
-            m.Previe();
-            MinTXTB.Text = m.ToString();
+            
+            MemoryBuffer.MinusMinute();
         }
 
         private void SecUpBTN_Click(object sender, RoutedEventArgs e)
         {
-            s.Next();
-            SecTXTB.Text = s.ToString();
+            
+            MemoryBuffer.PlusSecond();
         }
 
         private void SecDownBTN_Click(object sender, RoutedEventArgs e)
         {
-            s.Previe();
-            SecTXTB.Text = s.ToString();
+            
+            MemoryBuffer.MinusSecond();
         }
 
         
-        //Метод обновляет данные в текстбоксах
-        private void TextBoxDataRefresh()
-        {
-            s.TimeValue = s.GetSeconds(MemoryBuffer.TotalSeconds);
-            m.TimeValue = m.GetMinutes(MemoryBuffer.TotalSeconds);
-            h.TimeValue = h.GetHours(MemoryBuffer.TotalSeconds);
-            HourTXTB.Text = h.ToString();
-            MinTXTB.Text = m.ToString();
-            SecTXTB.Text = s.ToString();
-        }
+       
+        
         #endregion
         
         private void StartBTN_Click(object sender, RoutedEventArgs e)
         {
-            if (MemoryBuffer.CurrentState == TimerState.Off)
+            
+            switch (MemoryBuffer.CurrentState)
             {
-                
-                h.TimeValue = Convert.ToInt32(HourTXTB.Text);
-                m.TimeValue = Convert.ToInt32(MinTXTB.Text);
-                s.TimeValue = Convert.ToInt32(SecTXTB.Text);
-                MemoryBuffer.TotalSeconds = h.GetTotalSeconds() + m.GetTotalSeconds() + s.GetTotalSeconds();
-                MemoryBuffer.StartingTime = MemoryBuffer.TotalSeconds;
-                if (MemoryBuffer.TotalSeconds != 0)
-                {
-                    VisualUpdateTimerON();
-                    MemoryBuffer.CurrentState = TimerState.On;
-                    //MemoryBuffer.TotalSeconds--;
-                    //TextBoxDataRefresh();
-                    Timer.Start();
-                }
-            }
-            else
-                if(MemoryBuffer.CurrentState==TimerState.On)
-            {
-                Timer.Stop();
-                MemoryBuffer.TotalSeconds = MemoryBuffer.StartingTime;
-                
-                
-                
-                VisualUpdateTimerOFF();
-                TextBoxDataRefresh();
-                MemoryBuffer.CurrentState = TimerState.Off;
-            }
-                else if (MemoryBuffer.CurrentState == TimerState.Paused)
-                {
-                    
-                    MemoryBuffer.TotalSeconds = MemoryBuffer.StartingTime;
-                    
+                case TimerState.Off:
+                    {
+                        MemoryBuffer.StartingTime = MemoryBuffer.TotalSeconds;
+                        if (MemoryBuffer.TotalSeconds != 0)
+                        {
+                            Timer.Start();
+                            VisualUpdateTimerON();
+                            MemoryBuffer.CurrentState = TimerState.On;
+                            
+                        }
+                    }
+                    break;
+                case TimerState.On:
+                    {
+                        Timer.Stop();
+                        MemoryBuffer.TotalSeconds = MemoryBuffer.StartingTime;
+                        VisualUpdateTimerOFF();
+                        MemoryBuffer.CurrentState = TimerState.Off;
+                    }
+                    break;
+                case TimerState.Paused:
+                    {
+                        MemoryBuffer.TotalSeconds = MemoryBuffer.StartingTime;
 
-                    VisualUpdateTimerOFF();
-                    MemoryBuffer.CurrentState = TimerState.Off;
-                    TextBoxDataRefresh();
-                }
-                
+
+                        VisualUpdateTimerOFF();
+                        MemoryBuffer.CurrentState = TimerState.Off;
+                        
+                    }
+                    break;
+            }
         }
         private void Timer_tick(object sender, EventArgs e)
         {
             MemoryBuffer.TotalSeconds--;
 
-            TextBoxDataRefresh();
+            
             if (MemoryBuffer.TotalSeconds == 0) 
             {
                 MemoryBuffer.CurrentState = TimerState.Off;
                 Timer.Stop();
                 VisualUpdateTimerOFF();
                 var warningWindow = new TurnOffWarning();
+                warningWindow.AdditionalTimeButtonClick += ClickStartButton;
                 warningWindow.ShowDialog();
+            }
+        }
+
+        private void ClickStartButton(object sender, EventArgs e)
+        {
+            switch (MemoryBuffer.CurrentState)
+            {
+                case TimerState.Off:
+                    {
+                        MemoryBuffer.StartingTime = MemoryBuffer.TotalSeconds;
+                        if (MemoryBuffer.TotalSeconds != 0)
+                        {
+                            Timer.Start();
+                            VisualUpdateTimerON();
+                            MemoryBuffer.CurrentState = TimerState.On;
+
+                        }
+                    }
+                    break;
+                case TimerState.On:
+                    {
+                        Timer.Stop();
+                        MemoryBuffer.TotalSeconds = MemoryBuffer.StartingTime;
+                        VisualUpdateTimerOFF();
+                        MemoryBuffer.CurrentState = TimerState.Off;
+                    }
+                    break;
+                case TimerState.Paused:
+                    {
+                        MemoryBuffer.TotalSeconds = MemoryBuffer.StartingTime;
+
+
+                        VisualUpdateTimerOFF();
+                        MemoryBuffer.CurrentState = TimerState.Off;
+
+                    }
+                    break;
             }
         }
         #region Визуальные преображения с включением таймера
@@ -162,17 +191,22 @@ namespace WPFTimer
         {
             BTNStartContent.Text = "Clear";
             PauseBTNContent.Text = "Pause";
-            
-            HourDownBTN.IsEnabled = false;
-            HourUpBTN.IsEnabled = false;
-            MinDownBTN.IsEnabled = false;
-            MinUpBTN.IsEnabled = false;
-            SecDownBTN.IsEnabled = false;
-            SecUpBTN.IsEnabled = false;
+            Grid.SetRow(HourTXTB, 1);
+            Grid.SetRowSpan(HourTXTB, 3);
+            Grid.SetRow(MinTXTB, 1);
+            Grid.SetRowSpan(MinTXTB, 3);
+            Grid.SetRow(SecTXTB, 1);
+            Grid.SetRowSpan(SecTXTB, 3);
+            MinSecDoubleDot.Visibility = Visibility.Visible;
+            HourMinDoubleDot.Visibility = Visibility.Visible;
+            HourDownBTN.Visibility = Visibility.Hidden;
+            HourUpBTN.Visibility = Visibility.Hidden;
+            MinDownBTN.Visibility = Visibility.Hidden;
+            MinUpBTN.Visibility = Visibility.Hidden;
+            SecDownBTN.Visibility = Visibility.Hidden;
+            SecUpBTN.Visibility = Visibility.Hidden;
 
-            HourTXTB.IsReadOnly = true;
-            MinTXTB.IsReadOnly = true;
-            SecTXTB.IsReadOnly = true;
+            
             PauseBTN.IsEnabled = true;
             Expander.IsEnabled = false;
            
@@ -181,15 +215,23 @@ namespace WPFTimer
         {
             BTNStartContent.Text = "Start";
             PauseBTNContent.Text = "Pause";
-            HourDownBTN.IsEnabled = true;
-            HourUpBTN.IsEnabled = true;
-            MinDownBTN.IsEnabled = true;
-            MinUpBTN.IsEnabled = true;
-            SecDownBTN.IsEnabled = true;
-            SecUpBTN.IsEnabled = true;
-            HourTXTB.IsReadOnly = false;
-            MinTXTB.IsReadOnly = false;
-            SecTXTB.IsReadOnly = false;
+
+            Grid.SetRow(HourTXTB, 2);
+            Grid.SetRowSpan(HourTXTB, 2);
+            Grid.SetRow(MinTXTB, 2);
+            Grid.SetRowSpan(MinTXTB, 2);
+            Grid.SetRow(SecTXTB, 2);
+            Grid.SetRowSpan(SecTXTB, 2);
+            MinSecDoubleDot.Visibility = Visibility.Hidden;
+            HourMinDoubleDot.Visibility = Visibility.Hidden;
+
+            HourDownBTN.Visibility = Visibility.Visible;
+            HourUpBTN.Visibility = Visibility.Visible;
+            MinDownBTN.Visibility = Visibility.Visible;
+            MinUpBTN.Visibility = Visibility.Visible;
+            SecDownBTN.Visibility = Visibility.Visible;
+            SecUpBTN.Visibility = Visibility.Visible;
+            
             PauseBTN.IsEnabled = false;
             Expander.IsEnabled = true;
 
@@ -198,17 +240,25 @@ namespace WPFTimer
         {
             BTNStartContent.Text = "Clear";
             PauseBTNContent.Text = "Go On";
+
+           // HourTXTB
+            Grid.SetRow(HourTXTB, 1);
+            Grid.SetRowSpan(HourTXTB, 3);
+            Grid.SetRow(MinTXTB, 1);
+            Grid.SetRowSpan(MinTXTB, 3);
+            Grid.SetRow(SecTXTB, 1);
+            Grid.SetRowSpan(SecTXTB, 3);
+            MinSecDoubleDot.Visibility = Visibility.Visible;
+            HourMinDoubleDot.Visibility = Visibility.Visible;
+
+            HourDownBTN.Visibility = Visibility.Hidden;
+            HourUpBTN.Visibility = Visibility.Hidden;
+            MinDownBTN.Visibility = Visibility.Hidden;
+            MinUpBTN.Visibility = Visibility.Hidden;
+            SecDownBTN.Visibility = Visibility.Hidden;
+            SecUpBTN.Visibility = Visibility.Hidden;
             
-            HourDownBTN.IsEnabled = false;
-            HourUpBTN.IsEnabled = false;
-            MinDownBTN.IsEnabled = false;
-            MinUpBTN.IsEnabled = false;
-            SecDownBTN.IsEnabled = false;
-            SecUpBTN.IsEnabled = false;
             
-            HourTXTB.IsReadOnly = true;
-            MinTXTB.IsReadOnly = true;
-            SecTXTB.IsReadOnly = true;
 
             PauseBTN.IsEnabled = true;
             Expander.IsEnabled = false;
@@ -236,9 +286,10 @@ namespace WPFTimer
         {
             if (MemoryBuffer.FavTimeButtons.Count <= 6)
             {
-                MemoryBuffer.FavTimeButtons.Add(new MyTimeButton(String.Format("{0}:{1}:{2}", h.TimeValue, m.TimeValue, s.TimeValue)));
+                var str = MemoryBuffer.ReturnHours() + ":" + MemoryBuffer.ReturnMinutes() + ":" + MemoryBuffer.ReturnSeconds();
+                MemoryBuffer.FavTimeButtons.Add(new MyTimeButton(str));
                 MemoryBuffer.FavDelButtons.Add(new MyDeleteButton());
-                MemoryBuffer.FavTimeData.Add(new TimeSettings(h, m, s));
+                MemoryBuffer.FavTimeData.Add(MemoryBuffer.TotalSeconds);
 
 
 
@@ -249,9 +300,9 @@ namespace WPFTimer
                     {
                         var temp = (MyTimeButton)sender2;
                         int index = MemoryBuffer.FavTimeButtons.IndexOf(temp);
-                        MemoryBuffer.TotalSeconds = MemoryBuffer.FavTimeData[index].SaveTimeDate;
+                        MemoryBuffer.TotalSeconds = MemoryBuffer.FavTimeData[index];
 
-                        TextBoxDataRefresh();
+                        
                     };
 
                 MemoryBuffer.FavDelButtons.Last().Click += (object sender1, RoutedEventArgs empty) =>
@@ -289,10 +340,5 @@ namespace WPFTimer
             SetWin.ShowDialog();
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            //TurnOffWarning WarningWindow = new TurnOffWarning();
-            //WarningWindow.ShowDialog();
-        }
     }
 }

@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Threading;
-
+using WPFTimer;
 using System.Windows.Media.Animation;
 
 namespace WPFTimer
@@ -24,7 +24,14 @@ namespace WPFTimer
     {
         int TurnOfTime = MemoryBuffer.TurnOfTimeToCancel;
         DispatcherTimer TurnOfTimer = new System.Windows.Threading.DispatcherTimer();
-        
+        public event EventHandler AdditionalTimeButtonClick;
+        protected void OnAditionalButtonClick()
+        {
+            if (AdditionalTimeButtonClick != null)
+            {
+                AdditionalTimeButtonClick(this, EventArgs.Empty);
+            }
+        }
         public TurnOffWarning()
         {
             
@@ -69,17 +76,25 @@ namespace WPFTimer
             TurnOfTimer.Stop();
             this.Close();
             MemoryBuffer.TotalSeconds = 900;
+            OnAditionalButtonClick();
+            
             
         }
 
         private void btn30min_Click(object sender, RoutedEventArgs e)
         {
-
+            TurnOfTimer.Stop();
+            this.Close();
+            MemoryBuffer.TotalSeconds = 1800;
+            OnAditionalButtonClick();
         }
 
         private void btn1hour_Click(object sender, RoutedEventArgs e)
         {
-
+            TurnOfTimer.Stop();
+            this.Close();
+            MemoryBuffer.TotalSeconds = 3600;
+            OnAditionalButtonClick();
         }
     }
 }
