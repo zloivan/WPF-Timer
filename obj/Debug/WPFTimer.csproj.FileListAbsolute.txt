@@ -64,3 +64,5 @@ D:\WPFTIMER1.1\WpfApplication1\obj\Debug\WPFTimer.csproj.GenerateResource.Cache
 D:\WPFTIMER1.1\WpfApplication1\obj\Debug\TurnOffWarning.baml
 D:\WPFTIMER1.1\WpfApplication1\obj\Debug\TurnOffWarning.g.cs
 D:\WPFTIMER1.1\WpfApplication1\obj\Debug\WPFTimer.csprojResolveAssemblyReference.cache
+D:\WPFTIMER1.1\WpfApplication1\obj\Debug\PlaySoundWindow.baml
+D:\WPFTIMER1.1\WpfApplication1\obj\Debug\PlaySoundWindow.g.cs

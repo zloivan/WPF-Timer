@@ -1,0 +1,39 @@
+﻿<Window x:Class="WPFTimer.PlaySoundWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="PlaySoundWindow" Height="300" Width="300" ResizeMode="NoResize">
+    <Grid>
+        <Grid.Resources>
+            <Style TargetType ="Button" >
+                <Setter Property="Background" Value="White"/>
+                <Style.Triggers>
+                    <EventTrigger RoutedEvent="PreviewMouseDown">
+                        <SoundPlayerAction Source="Resources/KeypressStandard_converted.wav" />
+                    </EventTrigger>
+                </Style.Triggers>
+            </Style>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            
+        </Grid.ColumnDefinitions>
+        <Button x:Name="btnStop"  Grid.Column="1" HorizontalAlignment="Stretch"  Grid.Row="2" VerticalAlignment="Stretch" Click="btnStop_Click" >
+            <Viewbox>
+                <TextBlock>
+                    Stop
+                </TextBlock>
+            </Viewbox>
+        </Button>
+        <Image Grid.ColumnSpan="3">
+            <Image.Source>Icons\1449733439_finish_flag.ico</Image.Source>
+        </Image>
+    </Grid>
+</Window>

@@ -31,8 +31,9 @@ namespace WPFTimer
                     break;
                 default:
                     {
-                        var plr = new SoundPlayer(Properties.Resources.Alarm_Classic);
-                        plr.Play();
+                        var soundwin = new PlaySoundWindow();
+                        soundwin.ShowDialog();
+                        
                     }
                     break;
             }
