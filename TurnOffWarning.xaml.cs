@@ -61,7 +61,9 @@ namespace WPFTimer
             {
 
                 TurnOfTimer.Stop();
+                this.Close();
                 var Finish = new FinishAction(MemoryBuffer.ChosenRadioButtonState);
+                
             }
         }
 

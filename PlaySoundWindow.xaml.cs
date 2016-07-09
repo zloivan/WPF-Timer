@@ -28,7 +28,8 @@ using System.Media;namespace WPFTimer
             {
                 for (int i = 0; i < 10; i++)
                 {
-                    plr.Play();
+                    plr.PlayLooping();
+                    
                 }
             }
         }

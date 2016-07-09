@@ -31,6 +31,7 @@ namespace WPFTimer
                     break;
                 default:
                     {
+                        
                         var soundwin = new PlaySoundWindow();
                         soundwin.ShowDialog();
                         
