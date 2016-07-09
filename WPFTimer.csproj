@@ -66,7 +66,6 @@
     </Compile>
     <Compile Include="ShutDownClass.cs" />
     <Compile Include="Enums\StateEnum.cs" />
-    <Compile Include="TimeEntities.cs" />
     <Compile Include="TurnOffWarning.xaml.cs">
       <DependentUpon>TurnOffWarning.xaml</DependentUpon>
     </Compile>
@@ -154,6 +153,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Cross2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Alarm_Classic.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

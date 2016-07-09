@@ -63,3 +63,4 @@ D:\WPFTIMER1.1\WpfApplication1\obj\Debug\WPFTimer.Properties.Resources.resources
 D:\WPFTIMER1.1\WpfApplication1\obj\Debug\WPFTimer.csproj.GenerateResource.Cache
 D:\WPFTIMER1.1\WpfApplication1\obj\Debug\TurnOffWarning.baml
 D:\WPFTIMER1.1\WpfApplication1\obj\Debug\TurnOffWarning.g.cs
+D:\WPFTIMER1.1\WpfApplication1\obj\Debug\WPFTimer.csprojResolveAssemblyReference.cache

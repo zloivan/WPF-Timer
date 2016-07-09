@@ -6,6 +6,7 @@ using WPFTimer.Enums;
 using System.Windows;
 using System.Windows.Forms;
 using System.Media;
+using System.IO;
 
 namespace WPFTimer
 {
@@ -16,8 +17,8 @@ namespace WPFTimer
         {
             switch (settingRadioButtonsState)
             {
-                case SettingRadioButtonsState.Sleep: 
-                    { 
+                case SettingRadioButtonsState.Sleep:
+                    {
                         System.Windows.Forms.Application.SetSuspendState(PowerState.Suspend, true, false);
                         System.Windows.Application.Current.Shutdown();
                     }
@@ -28,14 +29,15 @@ namespace WPFTimer
                         System.Windows.Application.Current.Shutdown();
                     }
                     break;
-                default: 
-                    { 
-                        SystemSounds.Asterisk.Play();
+                default:
+                    {
+                        var plr = new SoundPlayer(Properties.Resources.Alarm_Classic);
+                        plr.Play();
                     }
                     break;
             }
-            
-            
+
+
         }
     }
 }

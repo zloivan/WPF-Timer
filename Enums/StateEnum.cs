@@ -9,6 +9,6 @@ namespace WPFTimer.Enums
     
     public enum TimerState
     {
-        On,Off,Paused,UnPaused
+        On,Off,Paused
     }
 }
