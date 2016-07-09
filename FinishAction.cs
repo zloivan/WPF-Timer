@@ -17,6 +17,24 @@ namespace WPFTimer
         {
             switch (settingRadioButtonsState)
             {
+                case SettingRadioButtonsState.PlaySound:
+                    {
+                        var soundwin = new PlaySoundWindow();
+                        soundwin.ShowDialog();
+                    }
+                    break;
+                case SettingRadioButtonsState.TurnOff:
+                    {
+                        System.Windows.Application.Current.Shutdown();
+                        System.Diagnostics.Process.Start("shutdown.exe", "-s");
+
+                    }
+                    break;
+                case SettingRadioButtonsState.OpenAudio:
+                    {
+ 
+                    }
+                    break;
                 case SettingRadioButtonsState.Sleep:
                     {
                         System.Windows.Forms.Application.SetSuspendState(PowerState.Suspend, true, false);
@@ -31,10 +49,8 @@ namespace WPFTimer
                     break;
                 default:
                     {
-                        
                         var soundwin = new PlaySoundWindow();
                         soundwin.ShowDialog();
-                        
                     }
                     break;
             }
