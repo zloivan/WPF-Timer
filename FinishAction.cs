@@ -37,14 +37,16 @@ namespace WPFTimer
                     break;
                 case SettingRadioButtonsState.Sleep:
                     {
-                        System.Windows.Forms.Application.SetSuspendState(PowerState.Suspend, true, false);
                         System.Windows.Application.Current.Shutdown();
+                        System.Windows.Forms.Application.SetSuspendState(PowerState.Suspend, true, false);
+                        
                     }
                     break;
                 case SettingRadioButtonsState.Hebirnate:
                     {
-                        System.Windows.Forms.Application.SetSuspendState(PowerState.Hibernate, true, false);
                         System.Windows.Application.Current.Shutdown();
+                        System.Windows.Forms.Application.SetSuspendState(PowerState.Hibernate, true, false);
+                       
                     }
                     break;
                 default:
