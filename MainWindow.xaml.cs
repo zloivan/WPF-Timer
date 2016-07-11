@@ -85,7 +85,7 @@ namespace WPFTimer
                     var a = (MyDeleteButton)sender1;
 
                     int index = MemoryBuffer.FavDelButtons.IndexOf(a);
-                    MemoryBuffer.FavDelButtons.RemoveAt(index);
+                    MemoryBuffer.FavDelButtons.RemoveAt(index); 
                     MemoryBuffer.FavTimeButtons.RemoveAt(index);
                     MemoryBuffer.FavTimeData.RemoveAt(index);
 

@@ -35,6 +35,11 @@ namespace WPFTimer
  
                     }
                     break;
+                case SettingRadioButtonsState.OpenFile:
+                    {
+ 
+                    }
+                    break;
                 case SettingRadioButtonsState.Sleep:
                     {
                         System.Windows.Application.Current.Shutdown();
