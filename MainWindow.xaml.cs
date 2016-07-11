@@ -49,6 +49,7 @@ namespace WPFTimer
             {
                 MemoryBuffer.TurnOfTimeToCancel = reader.ReadInt32();
                 MemoryBuffer.ChosenRadioButtonState = (SettingRadioButtonsState)reader.ReadInt32();
+                Expander.IsExpanded = reader.ReadBoolean();
 
             }
             using (BinaryReader FavDatareader = new BinaryReader(File.Open(@".\Favdata.dat", FileMode.Open, FileAccess.Read)))
@@ -59,6 +60,7 @@ namespace WPFTimer
                 }
             }
             AddAllSavedFavButtons(MemoryBuffer.FavTimeData);
+            
         }
 
         private void AddAllSavedFavButtons(List<int> list)
@@ -392,6 +394,7 @@ namespace WPFTimer
             {
                 writer.Write(MemoryBuffer.TurnOfTimeToCancel);
                 writer.Write((int)MemoryBuffer.ChosenRadioButtonState);
+                writer.Write(Expander.IsExpanded);
             }
             using (BinaryWriter FavDatawriter = new BinaryWriter(File.Open(@".\Favdata.dat", FileMode.Create, FileAccess.Write)))
             {

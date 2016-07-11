@@ -16,6 +16,7 @@ namespace WPFTimer
 
     static class MemoryBuffer
     {
+        
         private static int _totalSeconds;
         public static SettingRadioButtonsState ChosenRadioButtonState { get; set; }
         public static int TurnOfTimeToCancel {get;set;}
