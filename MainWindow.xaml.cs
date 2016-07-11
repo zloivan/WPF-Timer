@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
 
 using PCManagment;
 using System.Windows.Threading;
@@ -35,7 +36,7 @@ namespace WPFTimer
         public MainWindow()
         {
             InitializeComponent();
-            //после инициализации окна обновляется информация в textbox-ах.
+            
 
 
             Timer.Tick += new EventHandler(Timer_tick);
@@ -44,7 +45,57 @@ namespace WPFTimer
             RefreshFavButtons(MemoryBuffer.FavTimeButtons, MemoryBuffer.FavDelButtons);
 
             MemoryBuffer.TotalTimeChanged += ChangeTextBoxData;
+            using (BinaryReader reader = new BinaryReader(File.Open(@".\data.dat", FileMode.Open, FileAccess.Read)))
+            {
+                MemoryBuffer.TurnOfTimeToCancel = reader.ReadInt32();
+                MemoryBuffer.ChosenRadioButtonState = (SettingRadioButtonsState)reader.ReadInt32();
 
+            }
+            using (BinaryReader FavDatareader = new BinaryReader(File.Open(@".\Favdata.dat", FileMode.Open, FileAccess.Read)))
+            {
+                while (FavDatareader.PeekChar() > -1)
+                {
+                    MemoryBuffer.FavTimeData.Add(FavDatareader.ReadInt32());
+                }
+            }
+            AddAllSavedFavButtons(MemoryBuffer.FavTimeData);
+        }
+
+        private void AddAllSavedFavButtons(List<int> list)
+        {
+            for (int i = 0; i < list.Count;i++ )
+            {
+                MemoryBuffer.TotalSeconds = list[i];
+                var str = MemoryBuffer.ReturnHours() + ":" + MemoryBuffer.ReturnMinutes() + ":" + MemoryBuffer.ReturnSeconds();
+                MemoryBuffer.FavTimeButtons.Add(new MyTimeButton(str));
+                MemoryBuffer.FavDelButtons.Add(new MyDeleteButton());
+
+                RefreshFavButtons(MemoryBuffer.FavTimeButtons, MemoryBuffer.FavDelButtons);
+                MemoryBuffer.FavTimeButtons.Last().Click += (object sender2, RoutedEventArgs empty2) =>
+                    {
+                        var temp = (MyTimeButton)sender2;
+                        int index = MemoryBuffer.FavTimeButtons.IndexOf(temp);
+                        MemoryBuffer.TotalSeconds = MemoryBuffer.FavTimeData[index];
+
+
+                    };
+
+                MemoryBuffer.FavDelButtons.Last().Click += (object sender1, RoutedEventArgs empty) =>
+                {
+                    var a = (MyDeleteButton)sender1;
+
+                    int index = MemoryBuffer.FavDelButtons.IndexOf(a);
+                    MemoryBuffer.FavDelButtons.RemoveAt(index);
+                    MemoryBuffer.FavTimeButtons.RemoveAt(index);
+                    MemoryBuffer.FavTimeData.RemoveAt(index);
+
+                    RefreshFavButtons(MemoryBuffer.FavTimeButtons, MemoryBuffer.FavDelButtons);
+                };
+                MemoryBuffer.TotalSeconds = 0;
+
+            }
+
+                
         }
 
         void ChangeTextBoxData(object sender, TimeEventArgs e)
@@ -332,6 +383,23 @@ namespace WPFTimer
         {
             SettingsWindow SetWin = new SettingsWindow();
             SetWin.ShowDialog();
+        }
+
+        private void Window_Closing_1(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+
+            using (BinaryWriter writer = new BinaryWriter(File.Open(@".\data.dat",FileMode.OpenOrCreate,FileAccess.Write)))
+            {
+                writer.Write(MemoryBuffer.TurnOfTimeToCancel);
+                writer.Write((int)MemoryBuffer.ChosenRadioButtonState);
+            }
+            using (BinaryWriter FavDatawriter = new BinaryWriter(File.Open(@".\Favdata.dat", FileMode.Create, FileAccess.Write)))
+            {
+                foreach (var date in MemoryBuffer.FavTimeData)
+                {
+                    FavDatawriter.Write(date);
+                }
+            }
         }
 
     }

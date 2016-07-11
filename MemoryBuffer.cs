@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using WPFTimer.AdditionalButtons;
-
+using System.IO;
 using WPFTimer.Enums;
 using System;
 
@@ -34,6 +34,7 @@ namespace WPFTimer
             }
         }
         public static List<int> FavTimeData = new List<int>();
+
         public static void PlusHour() { TotalSeconds += 3600; }
         public static void MinusHour() 
         {
@@ -93,10 +94,12 @@ namespace WPFTimer
         
         static MemoryBuffer()
         {
+            
             ChosenRadioButtonState = SettingRadioButtonsState.PlaySound;
             CurrentState = TimerState.Off;
             TotalSeconds = 0;
             TurnOfTimeToCancel = 10;
+
         }
     }
     
