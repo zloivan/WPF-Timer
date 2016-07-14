@@ -42,7 +42,7 @@ namespace WPFTimer
             txtWarningTimer.Text = TurnOfTime.ToString();
             TurnOfTimer.Tick += TurnOfTimer_Tick;
             TurnOfTimer.Start();
-
+            
 
 
 

@@ -50,6 +50,7 @@ namespace WPFTimer
                 MemoryBuffer.TurnOfTimeToCancel = reader.ReadInt32();
                 MemoryBuffer.ChosenRadioButtonState = (SettingRadioButtonsState)reader.ReadInt32();
                 Expander.IsExpanded = reader.ReadBoolean();
+                MemoryBuffer.MusicFileName = reader.ReadString();
 
             }
             using (BinaryReader FavDatareader = new BinaryReader(File.Open(@".\Favdata.dat", FileMode.Open, FileAccess.Read)))
@@ -100,7 +101,7 @@ namespace WPFTimer
                 
         }
 
-        void ChangeTextBoxData(object sender, TimeEventArgs e)
+        void ChangeTextBoxData(object sender, EventArgs e)
         {
 
             HourTXTB.Text = MemoryBuffer.ReturnHours().ToString();
@@ -395,6 +396,7 @@ namespace WPFTimer
                 writer.Write(MemoryBuffer.TurnOfTimeToCancel);
                 writer.Write((int)MemoryBuffer.ChosenRadioButtonState);
                 writer.Write(Expander.IsExpanded);
+                writer.Write(MemoryBuffer.MusicFileName);
             }
             using (BinaryWriter FavDatawriter = new BinaryWriter(File.Open(@".\Favdata.dat", FileMode.Create, FileAccess.Write)))
             {

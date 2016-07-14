@@ -6,6 +6,7 @@ using System.Windows.Input;
 using System.Text.RegularExpressions;
 using WPFTimer.Enums;
 using System;
+using Microsoft.Win32;
 
 namespace WPFTimer
 {
@@ -24,6 +25,15 @@ namespace WPFTimer
             InitializeComponent();
             txtTurnOffTime.Text = TurnOfTimer.ToString();
             RadioButtonState(MemoryBuffer.ChosenRadioButtonState);
+            MemoryBuffer.MusicPathChanged += IsMusicFileChosen;
+            MemoryBuffer.FilePathChanged += IsExecutableFileChosen;
+            txtMusicPath.Text = MemoryBuffer.MusicFileName;
+            txtFilePath.Text = MemoryBuffer.ExecutingFileName;
+        }
+
+        private void IsExecutableFileChosen(object sender, EventArgs e)
+        {
+            txtFilePath.Text = MemoryBuffer.ExecutingFileName;
         }
         //Метод получает в качестве аргумента перечисление "состояние радио кнопки" из буфера памяти, и устанавливает в соответсвующее положение радио кнопки.
         private void RadioButtonState(SettingRadioButtonsState settingRadioButtonsState)
@@ -61,6 +71,12 @@ namespace WPFTimer
                 e.Handled = true;
 
             
+        }
+
+        private void IsMusicFileChosen(object sender,EventArgs e)
+        {
+            txtMusicPath.Text = MemoryBuffer.MusicFileName;
+ 
         }
 
         private void btnOk_Click(object sender, RoutedEventArgs e)
@@ -121,6 +137,28 @@ namespace WPFTimer
         {
             if(txtTurnOffTime.Text!="")
             TurnOfTimer= Convert.ToInt32(txtTurnOffTime.Text);
+        }
+
+        private void btnBrouseFile_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog dlg = new OpenFileDialog();
+
+            Nullable<bool> result = dlg.ShowDialog();
+            if (result == true)
+            {
+                MemoryBuffer.ExecutingFileName = dlg.FileName;
+            }
+        }
+
+        private void btmBrouseAudio_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog dlg = new OpenFileDialog();
+            dlg.Filter = "Music File|*.mp3;*.wav";
+            Nullable<bool> result= dlg.ShowDialog();
+            if (result == true)
+            {
+                MemoryBuffer.MusicFileName = dlg.FileName;
+            }
         }
     }
 }

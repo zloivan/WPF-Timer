@@ -7,16 +7,12 @@ using System;
 
 namespace WPFTimer
 {
-    public class TimeEventArgs:EventArgs
-    {
-        public int TotalTime{get;set;}
-
-        
-    }
+    
 
     static class MemoryBuffer
     {
-        
+        private static string _musicFileName;
+        private static string _executingFileName;
         private static int _totalSeconds;
         public static SettingRadioButtonsState ChosenRadioButtonState { get; set; }
         public static int TurnOfTimeToCancel {get;set;}
@@ -25,13 +21,14 @@ namespace WPFTimer
         
         public static List<MyDeleteButton> FavDelButtons = new List<MyDeleteButton>();
         
-        public static event EventHandler<TimeEventArgs> TotalTimeChanged;
-        
+        public static event EventHandler TotalTimeChanged;
+        public static event EventHandler MusicPathChanged;
+        public static event EventHandler FilePathChanged;
         private static void OnTotalTimeChanging(int totalSeconds)
         {
             if(TotalTimeChanged!=null)
             {
-                TotalTimeChanged(null, new TimeEventArgs() { TotalTime = totalSeconds });
+                TotalTimeChanged(null, EventArgs.Empty);
             }
         }
         public static List<int> FavTimeData = new List<int>();
@@ -91,11 +88,50 @@ namespace WPFTimer
                 OnTotalTimeChanging(value);
             }
         }
+        public static string MusicFileName 
+        {
+            get 
+            {
+                return _musicFileName;
+            }
+            set
+            {
+                _musicFileName = value;
+                OnMusicFileNameChange();
+            } 
+        }
+        public static string ExecutingFileName
+        {
+            get
+            {
+                return _executingFileName;
+            }
+            set
+            {
+                _executingFileName = value;
+                OnFileNameChange();
+            }
+        }
+
+        private static void OnMusicFileNameChange()
+        {
+            if (MusicPathChanged != null)
+            {
+                MusicPathChanged(null,EventArgs.Empty);
+            }
+        }
+        private static void OnFileNameChange()
+        {
+            if (FilePathChanged != null)
+            {
+                FilePathChanged(null, EventArgs.Empty);
+            }
+        }
 
         
         static MemoryBuffer()
         {
-            
+            MusicFileName = null;
             ChosenRadioButtonState = SettingRadioButtonsState.PlaySound;
             CurrentState = TimerState.Off;
             TotalSeconds = 0;
