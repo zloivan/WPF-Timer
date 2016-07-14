@@ -54,7 +54,7 @@ namespace WPFTimer
             {
                 TurnOfTime--;
                 txtWarningTimer.Text = TurnOfTime.ToString();
-                //PrBTimerVisualization.SetValue(DependencyProperty.UnsetValue, TurnOfTime);
+               
 
             }
             else
