@@ -116,5 +116,14 @@ namespace WPFTimer.Properties {
                 return ResourceManager.GetStream("KeypressStandard_converted", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.IO.UnmanagedMemoryStream, аналогичного System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream Undock {
+            get {
+                return ResourceManager.GetStream("Undock", resourceCulture);
+            }
+        }
     }
 }

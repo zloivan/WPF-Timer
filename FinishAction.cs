@@ -7,6 +7,17 @@ using System.Windows;
 using System.Windows.Forms;
 using System.Media;
 using System.IO;
+using System.Threading.Tasks;
+
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+using WMPLib;
+
 
 namespace WPFTimer
 {
@@ -27,12 +38,18 @@ namespace WPFTimer
                     {
                         System.Windows.Application.Current.Shutdown();
                         System.Diagnostics.Process.Start("shutdown.exe", "-s");
-
+                       
                     }
                     break;
                 case SettingRadioButtonsState.OpenAudio:
                     {
-
+                        if (MemoryBuffer.MusicFileName != null)
+                        {
+                            WMPLib.WindowsMediaPlayer mp = new WindowsMediaPlayer();
+                            
+                            mp.openPlayer(MemoryBuffer.MusicFileName);
+                            
+                        }
  
                     }
                     break;

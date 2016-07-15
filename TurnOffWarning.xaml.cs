@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using System.Windows.Threading;
 using WPFTimer;
 using System.Windows.Media.Animation;
+using System.Media;
 
 namespace WPFTimer
 {
@@ -53,6 +54,9 @@ namespace WPFTimer
             if (TurnOfTime != 0)
             {
                 TurnOfTime--;
+                //SoundPlayerAction pl = new SoundPlayerAction();
+                SoundPlayer sp = new SoundPlayer(Properties.Resources.Undock);
+                sp.Play();
                 txtWarningTimer.Text = TurnOfTime.ToString();
                
 
@@ -97,6 +101,16 @@ namespace WPFTimer
             this.Close();
             MemoryBuffer.TotalSeconds = 3600;
             OnAditionalButtonClick();
+        }
+        protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
+        {
+
+            TurnOfTimer.Stop();
+            base.OnClosing(e);
+        }
+        private void Window_Closing_1(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            
         }
     }
 }
