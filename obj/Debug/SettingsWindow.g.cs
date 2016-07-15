@@ -156,7 +156,7 @@ namespace WPFTimer {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/WpfApplication1;component/settingswindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Visual Timer;component/settingswindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\SettingsWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

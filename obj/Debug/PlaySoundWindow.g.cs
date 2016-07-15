@@ -60,7 +60,7 @@ namespace WPFTimer {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/WpfApplication1;component/playsoundwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Visual Timer;component/playsoundwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\PlaySoundWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

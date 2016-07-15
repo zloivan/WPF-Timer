@@ -52,7 +52,7 @@ namespace WPFTimer {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/WpfApplication1;component/favoritebtn.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Visual Timer;component/favoritebtn.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\FavoriteBTN.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

@@ -92,7 +92,7 @@ namespace WPFTimer {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/WpfApplication1;component/turnoffwarning.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Visual Timer;component/turnoffwarning.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\TurnOffWarning.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
