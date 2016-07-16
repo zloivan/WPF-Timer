@@ -43,7 +43,8 @@ namespace WPFTimer
             txtWarningTimer.Text = TurnOfTime.ToString();
             TurnOfTimer.Tick += TurnOfTimer_Tick;
             TurnOfTimer.Start();
-            
+            SoundPlayer sp = new SoundPlayer(Properties.Resources.Undock);
+            sp.Play();
 
 
 
@@ -55,8 +56,7 @@ namespace WPFTimer
             {
                 TurnOfTime--;
                 //SoundPlayerAction pl = new SoundPlayerAction();
-                SoundPlayer sp = new SoundPlayer(Properties.Resources.Undock);
-                sp.Play();
+                
                 txtWarningTimer.Text = TurnOfTime.ToString();
                
 
