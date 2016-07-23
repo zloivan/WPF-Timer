@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("1449733481_timer.ico")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/warning%20window.png")]
 
 

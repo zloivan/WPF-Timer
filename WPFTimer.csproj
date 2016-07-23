@@ -101,6 +101,11 @@
     <Compile Include="PlaySoundWindow.xaml.cs">
       <DependentUpon>PlaySoundWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="SettingsWindow.xaml.cs">
       <DependentUpon>SettingsWindow.xaml</DependentUpon>
     </Compile>
@@ -146,11 +151,6 @@
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -158,8 +158,8 @@
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
@@ -167,7 +167,6 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
-    <None Include="WPFTimer_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -242,7 +241,7 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Undock.wav" />
+    <None Include="Resources\Undock.wav" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="1449733481_timer.ico" />
@@ -263,6 +262,27 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ReadMeFile\ReadMeFile.csproj">
+      <Project>{38b3428b-955e-4f5c-959e-92a3789a2aea}</Project>
+      <Name>ReadMeFile</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CheckBox.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ChosenRadioBurtton.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FavoritControll.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TurnOffTimer.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Warning window.PNG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

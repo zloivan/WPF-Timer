@@ -43,7 +43,7 @@ namespace WPFTimer
                     break;
                 case SettingRadioButtonsState.OpenAudio:
                     {
-                        if (MemoryBuffer.MusicFileName != null)
+                        if (MemoryBuffer.MusicFileName != "" && MemoryBuffer.MusicFileName!=null)
                         {
                             WMPLib.WindowsMediaPlayer mp = new WindowsMediaPlayer();
                             
@@ -55,7 +55,7 @@ namespace WPFTimer
                     break;
                 case SettingRadioButtonsState.OpenFile:
                     {
-                        if (MemoryBuffer.ExecutingFileName != null)
+                        if (MemoryBuffer.ExecutingFileName != "" && MemoryBuffer.ExecutingFileName!=null)
                         {
                             System.Diagnostics.Process.Start(MemoryBuffer.ExecutingFileName);
                         }

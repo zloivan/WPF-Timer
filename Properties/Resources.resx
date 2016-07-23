@@ -121,8 +121,17 @@
   <data name="Alarm_Classic" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Alarm_Classic.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="CheckBox" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CheckBox.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ChosenRadioBurtton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ChosenRadioBurtton.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Cross" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Cross.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FavoritControll" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FavoritControll.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="KeypressSpacebar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\KeypressSpacebar.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -130,8 +139,14 @@
   <data name="KeypressStandard_converted" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\KeypressStandard_converted.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="TurnOffTimer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TurnOffTimer.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Undock" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Undock.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\Resources\Undock.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Warning_window" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Warning window.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="_1466977754_Close" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Cross2.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

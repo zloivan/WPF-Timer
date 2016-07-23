@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
-
+using ReadMeFile;
 using PCManagment;
 using System.Windows.Threading;
 using WPFTimer.AdditionalButtons;
@@ -413,6 +413,12 @@ namespace WPFTimer
                     FavDatawriter.Write(date);
                 }
             }
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            ReadMeFile.MainWindow rd = new ReadMeFile.MainWindow();
+            rd.ShowDialog();
         }
 
     }

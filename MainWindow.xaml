@@ -117,7 +117,7 @@
             <Image x:Name="___Без_имени_" Source="Icons/1449733448_settings.ico"/>
         </Button>
         <!--Кнопка Help-->
-        <Button Grid.Column="10" VerticalAlignment="Top" HorizontalAlignment="Left" Background="White" Padding="5" Margin="5,5,0,0"  >
+        <Button Grid.Column="10" VerticalAlignment="Top" HorizontalAlignment="Left" Background="White" Padding="5" Margin="5,5,0,0" Click="Button_Click_1"  >
             <Image Source="Icons/1449733454_help.ico" />
         </Button>
         <!--Картинка с таймером-->

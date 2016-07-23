@@ -92,9 +92,39 @@ namespace WPFTimer.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap CheckBox {
+            get {
+                object obj = ResourceManager.GetObject("CheckBox", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ChosenRadioBurtton {
+            get {
+                object obj = ResourceManager.GetObject("ChosenRadioBurtton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Cross {
             get {
                 object obj = ResourceManager.GetObject("Cross", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FavoritControll {
+            get {
+                object obj = ResourceManager.GetObject("FavoritControll", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -118,11 +148,31 @@ namespace WPFTimer.Properties {
         }
         
         /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TurnOffTimer {
+            get {
+                object obj = ResourceManager.GetObject("TurnOffTimer", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Поиск локализованного ресурса типа System.IO.UnmanagedMemoryStream, аналогичного System.IO.MemoryStream.
         /// </summary>
         internal static System.IO.UnmanagedMemoryStream Undock {
             get {
                 return ResourceManager.GetStream("Undock", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Warning_window {
+            get {
+                object obj = ResourceManager.GetObject("Warning_window", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }

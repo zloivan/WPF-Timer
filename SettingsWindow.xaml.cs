@@ -163,7 +163,7 @@ namespace WPFTimer
         private void btmBrouseAudio_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog dlg = new OpenFileDialog();
-            dlg.Filter = "Music File|*.mp3;*.wav;*.flac" ;
+            dlg.Filter = "Media Files|*.mp3;*.wav;*.flac;*.mp4;*.avi;*.mov" ;
             Nullable<bool> result= dlg.ShowDialog();
             if (result == true)
             {
