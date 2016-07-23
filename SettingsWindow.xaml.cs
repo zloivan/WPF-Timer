@@ -17,6 +17,11 @@ namespace WPFTimer
     {
         public SettingRadioButtonsState CurrentOperationRadioButtonState = MemoryBuffer.ChosenRadioButtonState;
         public int TurnOfTimer = MemoryBuffer.TurnOfTimeToCancel;
+        public string tempMediaFilePath = MemoryBuffer.MusicFileName;
+        public string tempFilePath = MemoryBuffer.ExecutingFileName;
+        public bool tempCBResult = MemoryBuffer.CBClearCheched;
+        
+
 
 
         
@@ -29,6 +34,7 @@ namespace WPFTimer
             MemoryBuffer.FilePathChanged += IsExecutableFileChosen;
             txtMusicPath.Text = MemoryBuffer.MusicFileName;
             txtFilePath.Text = MemoryBuffer.ExecutingFileName;
+            CBClearTime.IsChecked = MemoryBuffer.CBClearCheched;
         }
 
         private void IsExecutableFileChosen(object sender, EventArgs e)
@@ -83,6 +89,9 @@ namespace WPFTimer
         {
             MemoryBuffer.ChosenRadioButtonState = CurrentOperationRadioButtonState;
             MemoryBuffer.TurnOfTimeToCancel = TurnOfTimer;
+            MemoryBuffer.MusicFileName = tempMediaFilePath;
+            MemoryBuffer.ExecutingFileName = tempFilePath;
+            MemoryBuffer.CBClearCheched = tempCBResult;
             this.Close();
         }
 
@@ -146,7 +155,8 @@ namespace WPFTimer
             Nullable<bool> result = dlg.ShowDialog();
             if (result == true)
             {
-                MemoryBuffer.ExecutingFileName = dlg.FileName;
+                tempFilePath = dlg.FileName;
+                txtFilePath.Text = tempFilePath;
             }
         }
 
@@ -157,8 +167,44 @@ namespace WPFTimer
             Nullable<bool> result= dlg.ShowDialog();
             if (result == true)
             {
-                MemoryBuffer.MusicFileName = dlg.FileName;
+                tempMediaFilePath = dlg.FileName;
+                txtMusicPath.Text = tempMediaFilePath;
             }
+        }
+        
+       
+        private void ToDefault()
+        {
+            tempFilePath = "";
+            txtMusicPath.Text = "";
+            txtFilePath.Text = "";
+            tempMediaFilePath = "";
+            RBSound.IsChecked = true;
+            txtTurnOffTime.Text = "5";
+
+            CBClearTime.IsChecked = false;
+
+        }
+        private void btnToDefault_Click(object sender, RoutedEventArgs e)
+        {
+            ToDefault();
+
+
+        }
+
+        private void CBClearTime_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            
+        }
+
+        private void CBClearTime_Checked(object sender, RoutedEventArgs e)
+        {
+            tempCBResult = true;
+        }
+
+        private void CBClearTime_Unchecked(object sender, RoutedEventArgs e)
+        {
+            tempCBResult = false;
         }
     }
 }

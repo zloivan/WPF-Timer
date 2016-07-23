@@ -51,6 +51,7 @@ namespace WPFTimer
                 MemoryBuffer.ChosenRadioButtonState = (SettingRadioButtonsState)reader.ReadInt32();
                 Expander.IsExpanded = reader.ReadBoolean();
                 MemoryBuffer.MusicFileName = reader.ReadString();
+                MemoryBuffer.CBClearCheched = reader.ReadBoolean();
 
             }
             using (BinaryReader FavDatareader = new BinaryReader(File.Open(@".\Favdata.dat", FileMode.Open, FileAccess.Read)))
@@ -196,7 +197,10 @@ namespace WPFTimer
                     {
                         MemoryBuffer.CurrentState = TimerState.Off;
                         Timer.Stop();
-                        MemoryBuffer.TotalSeconds = MemoryBuffer.StartingTime;
+                        if (MemoryBuffer.CBClearCheched == true)
+                            MemoryBuffer.TotalSeconds = MemoryBuffer.StartingTime;
+                        else
+                            MemoryBuffer.TotalSeconds = 0;
                         VisualUpdateTimer(MemoryBuffer.CurrentState);
 
                     }
@@ -204,7 +208,10 @@ namespace WPFTimer
                 case TimerState.Paused:
                     {
                         MemoryBuffer.CurrentState = TimerState.Off;
-                        MemoryBuffer.TotalSeconds = MemoryBuffer.StartingTime;
+                        if (MemoryBuffer.CBClearCheched == true)
+                            MemoryBuffer.TotalSeconds = MemoryBuffer.StartingTime;
+                        else
+                            MemoryBuffer.TotalSeconds = 0;
                         VisualUpdateTimer(MemoryBuffer.CurrentState);
                     }
                     break;
@@ -397,6 +404,7 @@ namespace WPFTimer
                 writer.Write((int)MemoryBuffer.ChosenRadioButtonState);
                 writer.Write(Expander.IsExpanded);
                 writer.Write(MemoryBuffer.MusicFileName);
+                writer.Write(MemoryBuffer.CBClearCheched);
             }
             using (BinaryWriter FavDatawriter = new BinaryWriter(File.Open(@".\Favdata.dat", FileMode.Create, FileAccess.Write)))
             {

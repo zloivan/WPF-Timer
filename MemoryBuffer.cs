@@ -11,6 +11,7 @@ namespace WPFTimer
 
     static class MemoryBuffer
     {
+        public static bool CBClearCheched { get; set; }
         private static string _musicFileName;
         private static string _executingFileName;
         private static int _totalSeconds;

@@ -37,7 +37,7 @@ namespace WPFTimer
                 case SettingRadioButtonsState.TurnOff:
                     {
                         System.Windows.Application.Current.Shutdown();
-                        System.Diagnostics.Process.Start("shutdown.exe", "-s");
+                        System.Diagnostics.Process.Start("shutdown.exe", "/s /t 0");
                        
                     }
                     break;

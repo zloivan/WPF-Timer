@@ -20,27 +20,34 @@ namespace WPFTimer
     /// </summary>
     public partial class PlaySoundWindow : Window
     {
+        public SoundPlayer plr = null;
         public PlaySoundWindow()
         {
             InitializeComponent();
-            using (var plr = new SoundPlayer(Properties.Resources.Alarm_Classic))
-            {
+             plr = new SoundPlayer(Properties.Resources.Alarm_Classic);
+            
                 for (int i = 0; i < 10; i++)
                 {
                     plr.PlayLooping();
                     
                 }
-            }
-        }
-        public PlaySoundWindow(string filename)
-        {
-            InitializeComponent();
             
         }
+       
 
         private void btnStop_Click(object sender, RoutedEventArgs e)
         {
+            plr.Stop();
+            plr.Dispose();
             this.Close();
         }
+
+        protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
+        {
+            plr.Stop();
+            plr.Dispose();
+            base.OnClosing(e);
+        }
+       
     }
 }
