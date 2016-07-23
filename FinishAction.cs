@@ -55,7 +55,10 @@ namespace WPFTimer
                     break;
                 case SettingRadioButtonsState.OpenFile:
                     {
- 
+                        if (MemoryBuffer.ExecutingFileName != null)
+                        {
+                            System.Diagnostics.Process.Start(MemoryBuffer.ExecutingFileName);
+                        }
                     }
                     break;
                 case SettingRadioButtonsState.Sleep:
