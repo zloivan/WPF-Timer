@@ -76,3 +76,4 @@ D:\WPFTIMER1.1\WpfApplication1\obj\Debug\HelpWindow.baml
 D:\WPFTIMER1.1\WpfApplication1\obj\Debug\TimerMainWindow.baml
 D:\WPFTIMER1.1\WpfApplication1\obj\Debug\HelpWindow.g.cs
 D:\WPFTIMER1.1\WpfApplication1\obj\Debug\TimerMainWindow.g.cs
+D:\WPFTIMER1.1\WpfApplication1\obj\Debug\WPFTimer.csprojResolveAssemblyReference.cache
