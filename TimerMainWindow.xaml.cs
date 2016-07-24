@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
-using ReadMeFile;
+
 using PCManagment;
 using System.Windows.Threading;
 using WPFTimer.AdditionalButtons;
@@ -22,10 +22,8 @@ using WPFTimer.Enums;
 
 namespace WPFTimer
 {
-    /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
-    /// </summary>
-    public partial class MainWindow : Window
+    
+    public partial class TimerMainWindow : Window
     {
 
 
@@ -33,7 +31,8 @@ namespace WPFTimer
 
 
         DispatcherTimer Timer = new DispatcherTimer();
-        public MainWindow()
+        
+        public TimerMainWindow()
         {
             InitializeComponent();
             
@@ -417,7 +416,7 @@ namespace WPFTimer
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            ReadMeFile.MainWindow rd = new ReadMeFile.MainWindow();
+            HelpWindow rd = new HelpWindow();
             rd.ShowDialog();
         }
 

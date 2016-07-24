@@ -95,6 +95,9 @@
     </ApplicationDefinition>
     <Compile Include="Enums\SettingRadioButtonsState.cs" />
     <Compile Include="FinishAction.cs" />
+    <Compile Include="HelpWindow.xaml.cs">
+      <DependentUpon>HelpWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MemoryBuffer.cs" />
     <Compile Include="AdditionalButtons\MyDeleteButton.cs" />
     <Compile Include="AdditionalButtons\MyTimeButton.cs" />
@@ -109,7 +112,6 @@
     <Compile Include="SettingsWindow.xaml.cs">
       <DependentUpon>SettingsWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ShutDownClass.cs" />
     <Compile Include="Enums\StateEnum.cs" />
     <Compile Include="TurnOffWarning.xaml.cs">
       <DependentUpon>TurnOffWarning.xaml</DependentUpon>
@@ -118,7 +120,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainWindow.xaml">
+    <Page Include="HelpWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TimerMainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -130,8 +136,8 @@
     <Compile Include="FavoriteBTN.xaml.cs">
       <DependentUpon>FavoriteBTN.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
+    <Compile Include="TimerMainWindow.xaml.cs">
+      <DependentUpon>TimerMainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Page Include="PlaySoundWindow.xaml">
@@ -262,12 +268,6 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ReadMeFile\ReadMeFile.csproj">
-      <Project>{38b3428b-955e-4f5c-959e-92a3789a2aea}</Project>
-      <Name>ReadMeFile</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\CheckBox.PNG" />

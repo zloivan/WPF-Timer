@@ -108,9 +108,6 @@ namespace WPFTimer
             TurnOfTimer.Stop();
             base.OnClosing(e);
         }
-        private void Window_Closing_1(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            
-        }
+       
     }
 }

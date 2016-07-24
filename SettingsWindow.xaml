@@ -1,7 +1,7 @@
 ﻿<Window x:Class="WPFTimer.SettingsWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Settings" Height="600" Width="500"  Icon="Icons\1449733448_settings.ico" ResizeMode="NoResize">
+        Title="Settings" Height="600" Width="500"  Icon="Icons\1449733448_settings.ico" ResizeMode="NoResize" ShowInTaskbar="False">
     <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5,5,5,5">
 
         <Grid.RowDefinitions>

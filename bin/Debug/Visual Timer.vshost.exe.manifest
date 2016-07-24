@@ -43,26 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ReadMeFile.exe" size="387072">
-      <assemblyIdentity name="ReadMeFile" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
-      <hash>
-        <dsig:Transforms>
-          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-        </dsig:Transforms>
-        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Y6YnhDE+eVwbf4GfJSC9horJ9yd2jnso7I2PpmPLEsQ=</dsig:DigestValue>
-      </hash>
-    </dependentAssembly>
-  </dependency>
-  <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Visual Timer.exe" size="4153344">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Visual Timer.exe" size="4155904">
       <assemblyIdentity name="Visual Timer" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ahSHwV5P+YiP3FLenoCHQDaJP+QqaVE7w8v5B5vNjf8=</dsig:DigestValue>
+        <dsig:DigestValue>OQb8OEzlSnlZ0CeatlqFheSgU+bCHFyQg3+DqlYU0l8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

@@ -1,0 +1,39 @@
+﻿<Window x:Class="WPFTimer.HelpWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Little Tutorial" Height="982" Width="527" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="Icons\1449733454_help.ico" ShowInTaskbar="False" >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="128*"/>
+            <RowDefinition Height="209*"/>
+            <RowDefinition Height="166*"/>
+            <RowDefinition Height="220*"/>
+            <RowDefinition Height="231*"/>
+        </Grid.RowDefinitions>
+        <TextBlock FontSize="17"  Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5" TextWrapping="Wrap" Text="Hello and welcome to my WPF Timer application. It is made for study purpose and it is not distributable. My name is Ivan Khomichkov and I'm really pleased that u are using my application. Here im gonna note some features that are not obvious."  />
+        <StackPanel Grid.Row="1" Orientation="Horizontal" >
+
+            <Image Grid.RowSpan="2" HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="5" Grid.Row="1" Source="Resources\FavoritControll.PNG" />
+            <TextBlock FontSize="14"   HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="5" TextWrapping="Wrap" Text="This is favorite bar. by clicking to a pluss button, the active timer time will be added to a favorite bar, and when next time you'll need to start timer from that time, all u need to do is to press the time button. This is very handy when timer is set to some special time, for exaple the lengh of 2 tv shows series. It is much more convinient to just press one button instead of seting timer everytime from a start. And when your execute application next time your favorite time collection will be loaded." Width="388"  />
+        </StackPanel>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" >
+
+
+            <TextBlock FontSize="14"   HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="5" TextWrapping="Wrap" Text="In settings window this panel is responcible for what is going to happen when the timer is reaching its limit. For example you can ask application to turn off your PC, or start your chosen song via WMP." Width="198"  />
+            <Image Grid.RowSpan="2" HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="5" Grid.Row="1" Source="Resources\ChosenRadioBurtton.PNG" />
+        </StackPanel>
+        <StackPanel Grid.Row="3" Orientation="Vertical" >
+
+            <Image Grid.RowSpan="2" HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="5" Grid.Row="1" Source="Resources\TurnOffTimer.PNG" />
+            <TextBlock FontSize="14"   HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="5,5,0,5" TextWrapping="Wrap" Text="Well this field is kinda self-explenotory. After timer riach its limit the warning window will apear and it will signal that the chosen action is about to happen. And this field sets the time you need this window to be active. " Width="504" Height="83"  />
+
+        </StackPanel>
+        <StackPanel Grid.Row="4" Orientation="Horizontal" >
+
+            <Image Grid.RowSpan="2" HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="5,5,5,10" Grid.Row="1" Source="D:\WPFTIMER1.1\ReadMeFile\Resources\Warning window.PNG" />
+            <TextBlock FontSize="14"   HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="5,10,0,10" TextWrapping="Wrap" Text="This is a warning window. Beside you can prevent app from starting chosen action, you can start timer once again from 15,30 60 min. " Width="166"  />
+
+        </StackPanel>
+
+    </Grid>
+</Window>
