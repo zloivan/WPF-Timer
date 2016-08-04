@@ -132,7 +132,8 @@ namespace WPFTimer
         
         static MemoryBuffer()
         {
-            MusicFileName = null;
+            MusicFileName = "";
+            ExecutingFileName = "";
             ChosenRadioButtonState = SettingRadioButtonsState.PlaySound;
             CurrentState = TimerState.Off;
             TotalSeconds = 0;
