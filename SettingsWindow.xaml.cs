@@ -189,7 +189,6 @@ namespace WPFTimer
         {
             ToDefault();
 
-
         }
 
         private void CBClearTime_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)

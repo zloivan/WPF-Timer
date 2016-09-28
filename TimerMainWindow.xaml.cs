@@ -44,20 +44,29 @@ namespace WPFTimer
             RefreshFavButtons(MemoryBuffer.FavTimeButtons, MemoryBuffer.FavDelButtons);
 
             MemoryBuffer.TotalTimeChanged += ChangeTextBoxData;
-            using (BinaryReader reader = new BinaryReader(File.Open(@".\data.dat", FileMode.Open, FileAccess.Read)))
+            if (File.Exists(@".\data.dat"))
             {
-                MemoryBuffer.TurnOfTimeToCancel = reader.ReadInt32();
-                MemoryBuffer.ChosenRadioButtonState = (SettingRadioButtonsState)reader.ReadInt32();
-                Expander.IsExpanded = reader.ReadBoolean();
-                MemoryBuffer.MusicFileName = reader.ReadString();
-                MemoryBuffer.CBClearCheched = reader.ReadBoolean();
-
-            }
-            using (BinaryReader FavDatareader = new BinaryReader(File.Open(@".\Favdata.dat", FileMode.Open, FileAccess.Read)))
-            {
-                while (FavDatareader.PeekChar() > -1)
+                using (BinaryReader reader = new BinaryReader(File.Open(@".\data.dat", FileMode.Open, FileAccess.Read)))
                 {
-                    MemoryBuffer.FavTimeData.Add(FavDatareader.ReadInt32());
+                    
+                        MemoryBuffer.TurnOfTimeToCancel = reader.ReadInt32();
+                        MemoryBuffer.ChosenRadioButtonState = (SettingRadioButtonsState)reader.ReadInt32();
+                        Expander.IsExpanded = reader.ReadBoolean();
+                        MemoryBuffer.MusicFileName = reader.ReadString();
+                        MemoryBuffer.CBClearCheched = reader.ReadBoolean();
+                    
+                }
+            }
+            if (File.Exists(@".\Favdata.dat"))
+            {
+                using (BinaryReader FavDatareader = new BinaryReader(File.Open(@".\Favdata.dat", FileMode.Open, FileAccess.Read)))
+                {
+
+                    while (FavDatareader.PeekChar() > -1)
+                    {
+                        MemoryBuffer.FavTimeData.Add(FavDatareader.ReadInt32());
+                    }
+
                 }
             }
             AddAllSavedFavButtons(MemoryBuffer.FavTimeData);

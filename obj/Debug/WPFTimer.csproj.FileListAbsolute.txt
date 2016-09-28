@@ -45,20 +45,16 @@ D:\WPFTIMER1.1\WpfApplication1\WpfApplication1\obj\Debug\WPFTimer.csproj.Generat
 D:\WPFTIMER1.1\WpfApplication1\WpfApplication1\obj\Debug\SettingsWindow.baml
 D:\WPFTIMER1.1\WpfApplication1\WpfApplication1\obj\Debug\SettingsWindow.g.cs
 D:\WPFTIMER1.1\WpfApplication1\WpfApplication1\obj\Debug\WPFTimer.csprojResolveAssemblyReference.cache
-D:\WPFTIMER1.1\WpfApplication1\bin\Debug\Visual Timer.exe.config
-D:\WPFTIMER1.1\WpfApplication1\bin\Debug\Visual Timer.exe.manifest
-D:\WPFTIMER1.1\WpfApplication1\bin\Debug\Visual Timer.application
-D:\WPFTIMER1.1\WpfApplication1\bin\Debug\Visual Timer.exe
-D:\WPFTIMER1.1\WpfApplication1\bin\Debug\Visual Timer.pdb
-D:\WPFTIMER1.1\WpfApplication1\obj\Debug\Interop.WMPDXMLib.dll
-D:\WPFTIMER1.1\WpfApplication1\obj\Debug\Interop.WMPLauncher.dll
-D:\WPFTIMER1.1\WpfApplication1\obj\Debug\Interop.WMPLib.dll
 D:\WPFTIMER1.1\WpfApplication1\obj\Debug\WPFTimer.csproj.ResolveComReference.cache
 D:\WPFTIMER1.1\WpfApplication1\obj\Debug\FavoriteBTN.baml
+D:\WPFTIMER1.1\WpfApplication1\obj\Debug\HelpWindow.baml
+D:\WPFTIMER1.1\WpfApplication1\obj\Debug\TimerMainWindow.baml
 D:\WPFTIMER1.1\WpfApplication1\obj\Debug\PlaySoundWindow.baml
 D:\WPFTIMER1.1\WpfApplication1\obj\Debug\SettingsWindow.baml
 D:\WPFTIMER1.1\WpfApplication1\obj\Debug\TurnOffWarning.baml
 D:\WPFTIMER1.1\WpfApplication1\obj\Debug\FavoriteBTN.g.cs
+D:\WPFTIMER1.1\WpfApplication1\obj\Debug\HelpWindow.g.cs
+D:\WPFTIMER1.1\WpfApplication1\obj\Debug\TimerMainWindow.g.cs
 D:\WPFTIMER1.1\WpfApplication1\obj\Debug\PlaySoundWindow.g.cs
 D:\WPFTIMER1.1\WpfApplication1\obj\Debug\SettingsWindow.g.cs
 D:\WPFTIMER1.1\WpfApplication1\obj\Debug\TurnOffWarning.g.cs
@@ -68,12 +64,13 @@ D:\WPFTIMER1.1\WpfApplication1\obj\Debug\Visual Timer.g.resources
 D:\WPFTIMER1.1\WpfApplication1\obj\Debug\WPFTimer.Properties.Resources.resources
 D:\WPFTIMER1.1\WpfApplication1\obj\Debug\WPFTimer.csproj.GenerateResource.Cache
 D:\WPFTIMER1.1\WpfApplication1\obj\Debug\Visual Timer.TrustInfo.xml
-D:\WPFTIMER1.1\WpfApplication1\obj\Debug\Visual Timer.exe.manifest
-D:\WPFTIMER1.1\WpfApplication1\obj\Debug\Visual Timer.application
 D:\WPFTIMER1.1\WpfApplication1\obj\Debug\Visual Timer.exe
 D:\WPFTIMER1.1\WpfApplication1\obj\Debug\Visual Timer.pdb
-D:\WPFTIMER1.1\WpfApplication1\obj\Debug\HelpWindow.baml
-D:\WPFTIMER1.1\WpfApplication1\obj\Debug\TimerMainWindow.baml
-D:\WPFTIMER1.1\WpfApplication1\obj\Debug\HelpWindow.g.cs
-D:\WPFTIMER1.1\WpfApplication1\obj\Debug\TimerMainWindow.g.cs
+D:\WPFTIMER1.1\WpfApplication1\bin\Debug\Visual Timer.exe.config
+D:\WPFTIMER1.1\WpfApplication1\bin\Debug\Visual Timer.exe.manifest
+D:\WPFTIMER1.1\WpfApplication1\bin\Debug\Visual Timer.application
+D:\WPFTIMER1.1\WpfApplication1\bin\Debug\Visual Timer.exe
+D:\WPFTIMER1.1\WpfApplication1\bin\Debug\Visual Timer.pdb
 D:\WPFTIMER1.1\WpfApplication1\obj\Debug\WPFTimer.csprojResolveAssemblyReference.cache
+D:\WPFTIMER1.1\WpfApplication1\obj\Debug\Visual Timer.exe.manifest
+D:\WPFTIMER1.1\WpfApplication1\obj\Debug\Visual Timer.application

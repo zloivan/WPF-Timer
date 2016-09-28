@@ -16,7 +16,8 @@ using System.Windows.Input;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using WMPLib;
+
+
 
 
 namespace WPFTimer
@@ -45,9 +46,9 @@ namespace WPFTimer
                     {
                         if (MemoryBuffer.MusicFileName != "" && MemoryBuffer.MusicFileName!=null)
                         {
-                            WMPLib.WindowsMediaPlayer mp = new WindowsMediaPlayer();
+                            //WindowsMediaPlayer mp = new WindowsMediaPlayer();
                             
-                            mp.openPlayer(MemoryBuffer.MusicFileName);
+                            //mp.openPlayer(MemoryBuffer.MusicFileName);
                             
                         }
  
