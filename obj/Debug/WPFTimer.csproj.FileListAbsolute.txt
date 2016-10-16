@@ -74,3 +74,5 @@ D:\WPFTIMER1.1\WpfApplication1\bin\Debug\Visual Timer.pdb
 D:\WPFTIMER1.1\WpfApplication1\obj\Debug\WPFTimer.csprojResolveAssemblyReference.cache
 D:\WPFTIMER1.1\WpfApplication1\obj\Debug\Visual Timer.exe.manifest
 D:\WPFTIMER1.1\WpfApplication1\obj\Debug\Visual Timer.application
+D:\WPFTIMER1.1\WpfApplication1\obj\Debug\Interop.DXTMSFTLib.dll
+D:\WPFTIMER1.1\WpfApplication1\obj\Debug\Interop.DXTRANSLib.dll
