@@ -44,6 +44,7 @@ namespace WPFTimer
             RefreshFavButtons(MemoryBuffer.FavTimeButtons, MemoryBuffer.FavDelButtons);
 
             MemoryBuffer.TotalTimeChanged += ChangeTextBoxData;
+
             if (File.Exists(@".\data.dat"))
             {
                 using (BinaryReader reader = new BinaryReader(File.Open(@".\data.dat", FileMode.Open, FileAccess.Read)))
@@ -57,6 +58,7 @@ namespace WPFTimer
                     
                 }
             }
+
             if (File.Exists(@".\Favdata.dat"))
             {
                 using (BinaryReader FavDatareader = new BinaryReader(File.Open(@".\Favdata.dat", FileMode.Open, FileAccess.Read)))
@@ -116,7 +118,6 @@ namespace WPFTimer
             HourTXTB.Text = MemoryBuffer.ReturnHours().ToString();
             MinTXTB.Text = MemoryBuffer.ReturnMinutes().ToString();
             SecTXTB.Text = MemoryBuffer.ReturnSeconds().ToString();
-
 
         }
 
